@@ -7,6 +7,8 @@
 
 #import "OIMManager.h"
 #import "UploadFileCallbackProxy.h"
+#import "OIMRedPacketElem.h"
+#import "OIMTransferElem.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -243,6 +245,15 @@ NS_ASSUME_NONNULL_BEGIN
  + (OIMMessageInfo *)createAdvancedQuoteMessage:(NSString *)text
                                         message:(OIMMessageInfo *)message
                               messageEntityList:(NSArray <OIMMessageEntity *> *)messageEntityList;
+
++ (OIMMessageInfo *)createRedPacketMessage:(NSString *)operationID redPacketInfo:(OIMRedPacketElem *)redPacketInfo;
+
+
+
++ (OIMMessageInfo *)CreateTransferMessage:(NSString *)operationID transferInfo:(OIMTransferElem *)transferInfo;
+    
+
+
 
 @end
 

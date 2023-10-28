@@ -81,12 +81,13 @@
     Open_im_sdkClearConversationAndDeleteAllMsg(callback, [self operationId], conversationID);
 }
 
-- (void)deleteAllConversationFromLocalWithOnSuccess:(OIMSuccessCallback)onSuccess
-                                          onFailure:(OIMFailureCallback)onFailure {
-    CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:onSuccess onFailure:onFailure];
-    
-    Open_im_sdkDeleteAllConversationFromLocal(callback, [self operationId]);
-}
+//- (void)deleteAllConversationFromLocalWithOnSuccess:(OIMSuccessCallback)onSuccess
+//                                          onFailure:(OIMFailureCallback)onFailure {
+//    CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:onSuccess onFailure:onFailure];
+//    
+//    
+//    Open_im_sdkDeleteAllConversationFromLocal(callback, [self operationId]);
+//}
 
 - (void)setConversationDraft:(NSString *)conversationID
                    draftText:(NSString *)draftText

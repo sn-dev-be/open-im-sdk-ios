@@ -232,7 +232,16 @@
                              messageEntityList:(NSArray<OIMMessageEntity *> *)messageEntityList {
     NSArray *msgs = [OIMMessageEntity mj_keyValuesArrayWithObjectArray:messageEntityList];
     NSString *json = Open_im_sdkCreateAdvancedQuoteMessage([OIMManager.manager operationId], text, message.mj_JSONString, [[NSString alloc]initWithData:[NSJSONSerialization dataWithJSONObject:msgs options:0 error:nil] encoding:NSUTF8StringEncoding]);
-    
+    return [self convertToMessageInfo:json];
+}
+
++ (OIMMessageInfo *)createRedPacketMessage:(NSString *)operationID redPacketInfo:(OIMRedPacketElem *)redPacketInfo {
+    NSString *json = Open_im_sdkCreateRedPacketMessage(operationID, redPacketInfo.mj_JSONString);
+    return [self convertToMessageInfo:json];
+}
+
++ (OIMMessageInfo *)CreateTransferMessage:(NSString *)operationID transferInfo:(OIMTransferElem *)transferInfo {
+    NSString *json = Open_im_sdkCreateTransferMessage(operationID, transferInfo.mj_JSONString);
     return [self convertToMessageInfo:json];
 }
 

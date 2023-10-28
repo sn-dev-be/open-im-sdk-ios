@@ -65,11 +65,11 @@ NS_ASSUME_NONNULL_BEGIN
                                onSuccess:(nullable OIMSuccessCallback)onSuccess
                                onFailure:(nullable OIMFailureCallback)onFailure;
 
-/**
- * Delete all conversations
- */
-- (void)deleteAllConversationFromLocalWithOnSuccess:(nullable OIMSuccessCallback)onSuccess
-                                          onFailure:(nullable OIMFailureCallback)onFailure;
+///**
+// * Delete all conversations
+// */
+//- (void)deleteAllConversationFromLocalWithOnSuccess:(nullable OIMSuccessCallback)onSuccess
+//                                          onFailure:(nullable OIMFailureCallback)onFailure;
 
 /**
  * Set the draft for a conversation

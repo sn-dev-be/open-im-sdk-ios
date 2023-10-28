@@ -1163,14 +1163,14 @@ static NSString *OPENIMSDKTableViewCellIdentifier = @"OPENIMSDKTableViewCellIden
     [self operate:_cmd
              todo:^(void (^callback)(NSNumber *code, NSString *msg)) {
         
-        [OIMManager.manager markMessageAsReadByMsgID:CONVERSASTION_ID
-                                        clientMsgIDs:@[]
-                                           onSuccess:^(NSString * _Nullable data) {
-            
-            callback(nil, nil);
-        } onFailure:^(NSInteger code, NSString * _Nullable msg) {
-            callback(@(code), msg);
-        }];
+//        [OIMManager.manager markMessageAsReadByMsgID:CONVERSASTION_ID
+//                                        clientMsgIDs:@[]
+//                                           onSuccess:^(NSString * _Nullable data) {
+//
+//            callback(nil, nil);
+//        } onFailure:^(NSInteger code, NSString * _Nullable msg) {
+//            callback(@(code), msg);
+//        }];
         
     }];
 }
@@ -1462,14 +1462,14 @@ static NSString *OPENIMSDKTableViewCellIdentifier = @"OPENIMSDKTableViewCellIden
     [self operate:_cmd
              todo:^(void (^callback)(NSNumber *code, NSString *msg)) {
         
-        [OIMManager.manager markMessageAsReadByMsgID:CONVERSASTION_ID
-                                        clientMsgIDs:@[]
-                                           onSuccess:^(NSString * _Nullable data) {
-            
-            callback(nil, nil);
-        } onFailure:^(NSInteger code, NSString * _Nullable msg) {
-            callback(@(code), msg);
-        }];
+//        [OIMManager.manager markMessageAsReadByMsgID:CONVERSASTION_ID
+//                                        clientMsgIDs:@[]
+//                                           onSuccess:^(NSString * _Nullable data) {
+//            
+//            callback(nil, nil);
+//        } onFailure:^(NSInteger code, NSString * _Nullable msg) {
+//            callback(@(code), msg);
+//        }];
     }];
 }
 
@@ -1501,18 +1501,18 @@ static NSString *OPENIMSDKTableViewCellIdentifier = @"OPENIMSDKTableViewCellIden
     }];
 }
 
-- (void)deleteAllConversationFromLocal {
-    [self operate:_cmd
-             todo:^(void (^callback)(NSNumber *code, NSString *msg)) {
-        
-        [OIMManager.manager deleteAllConversationFromLocalWithOnSuccess:^(NSString * _Nullable data) {
-            
-            callback(nil, nil);
-        } onFailure:^(NSInteger code, NSString * _Nullable msg) {
-            callback(@(code), msg);
-        }];
-    }];
-}
+//- (void)deleteAllConversationFromLocal {
+//    [self operate:_cmd
+//             todo:^(void (^callback)(NSNumber *code, NSString *msg)) {
+//
+//        [OIMManager.manager deleteAllConversationFromLocalWithOnSuccess:^(NSString * _Nullable data) {
+//
+//            callback(nil, nil);
+//        } onFailure:^(NSInteger code, NSString * _Nullable msg) {
+//            callback(@(code), msg);
+//        }];
+//    }];
+//}
 
 - (void)resetConversationGroupAtType {
     [self operate:_cmd

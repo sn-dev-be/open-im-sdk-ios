@@ -20,6 +20,8 @@
 #import "OIMAttachedInfoElem.h"
 #import "OIMDefine.h"
 #import "OIMMessageElem.h"
+#import "OIMRedPacketElem.h"
+#import "OIMTransferElem.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -113,6 +115,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, strong) OIMAdvancedTextElem *advancedTextElem;
 
 @property (nonatomic, nullable, strong) OIMTypingElem *typingElem;
+@property (nonatomic, nullable, strong) OIMRedPacketElem *redPacketElem; //
+@property (nonatomic, strong) OIMTransferElem *transferElem; // <#注释#>
 
 @property (nonatomic, assign) NSTimeInterval hasReadTime;
 

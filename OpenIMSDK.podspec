@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/OpenIMSDK/Open-IM-SDK-iOS'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'OpenIM' => 'https://github.com/OpenIMSDK/Open-IM-SDK-iOS' }
-  s.source           = { :git => 'https://github.com/OpenIMSDK/Open-IM-SDK-iOS.git', :tag => s.version.to_s }
+  s.source           = { :git => 'git@github.com:sn-dev-be/open-im-sdk-ios.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '11.0'    
   
@@ -34,6 +34,19 @@ Pod::Spec.new do |s|
   s.subspec 'Utils' do |ss|
     ss.source_files = 'OpenIMSDK/Utils/*.{h,m}'
   end
+
+  s.subspec 'XCFrameworkPod' do |xcframework|
+    xcframework.vendored_frameworks = 'OpenIMSDK/OpenIMCore.xcframework'
+  end
+  
+  s.subspec 'MJExtension' do |ss|
+#    ss.dependency 'OpenIMSDK/Utils'
+
+    ss.source_files = 'OpenIMSDK/MJExtension/*.{h,m}'
+    
+  end
+  
+  
 
   s.subspec 'CallbackProxy' do |ss|
     ss.dependency 'OpenIMSDK/Utils'
@@ -51,6 +64,7 @@ Pod::Spec.new do |s|
     ss.dependency 'OpenIMSDK/Model'
     ss.dependency 'OpenIMSDK/CallbackProxy'
     ss.dependency 'OpenIMSDK/Callbacker'
+    ss.dependency 'OpenIMSDK/MJExtension'
 
     ss.source_files = 'OpenIMSDK/Interface/*.{h,m}'
   end
@@ -58,7 +72,8 @@ Pod::Spec.new do |s|
   s.subspec 'Callbacker' do |ss|
     ss.dependency 'OpenIMSDK/Model'
     ss.dependency 'OpenIMSDK/Utils'
-
+    ss.dependency 'OpenIMSDK/MJExtension'
+    
     ss.source_files = 'OpenIMSDK/Callbacker/*.{h,m}'
   end
 
@@ -75,6 +90,7 @@ Pod::Spec.new do |s|
   
   s.static_framework = true
 
-  s.dependency 'OpenIMSDKCore', '3.3.0'
-  s.dependency 'MJExtension'
+  #s.dependency 'OpenIMSDKCore', :git => 'https://github.com/sn-dev-be/openim-sdk-core-ios.git'
+  #s.dependency 'OpenIMSDKCore', '3.3.0'
+  #s.dependency 'MJExtension'
 end

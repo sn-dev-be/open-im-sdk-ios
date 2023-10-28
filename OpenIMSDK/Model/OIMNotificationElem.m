@@ -6,7 +6,8 @@
 //
 
 #import "OIMNotificationElem.h"
-#import <MJExtension/MJExtension.h>
+#import "MJExtension.h"
+
 
 @implementation OIMNotificationElem
 

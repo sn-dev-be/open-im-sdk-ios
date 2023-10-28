@@ -46,7 +46,7 @@
              onFailure:(OIMFailureCallback)onFailure {
     CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:onSuccess onFailure:onFailure];
         
-    Open_im_sdkUpdateFcmToken(callback, [self operationId], fmcToken);
+    Open_im_sdkUpdateFcmToken(callback, [self operationId], fmcToken, MAXLOGNAME);
 }
 
 - (void)subscribeUsersStatus:(NSArray<NSString *> *)userIDs
