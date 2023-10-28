@@ -246,11 +246,11 @@ NS_ASSUME_NONNULL_BEGIN
                                         message:(OIMMessageInfo *)message
                               messageEntityList:(NSArray <OIMMessageEntity *> *)messageEntityList;
 
-+ (OIMMessageInfo *)createRedPacketMessage:(NSString *)operationID redPacketInfo:(OIMRedPacketElem *)redPacketInfo;
++ (OIMMessageInfo *)createRedPacketMessage:(OIMRedPacketElem *)redPacketInfo;
 
 
 
-+ (OIMMessageInfo *)CreateTransferMessage:(NSString *)operationID transferInfo:(OIMTransferElem *)transferInfo;
++ (OIMMessageInfo *)CreateTransferMessage:(OIMTransferElem *)transferInfo;
     
 
 

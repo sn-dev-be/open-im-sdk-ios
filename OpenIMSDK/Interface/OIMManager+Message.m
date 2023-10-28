@@ -235,13 +235,13 @@
     return [self convertToMessageInfo:json];
 }
 
-+ (OIMMessageInfo *)createRedPacketMessage:(NSString *)operationID redPacketInfo:(OIMRedPacketElem *)redPacketInfo {
-    NSString *json = Open_im_sdkCreateRedPacketMessage(operationID, redPacketInfo.mj_JSONString);
++ (OIMMessageInfo *)createRedPacketMessage:(OIMRedPacketElem *)redPacketInfo {
+    NSString *json = Open_im_sdkCreateRedPacketMessage([OIMManager.manager operationId], redPacketInfo.mj_JSONString);
     return [self convertToMessageInfo:json];
 }
 
-+ (OIMMessageInfo *)CreateTransferMessage:(NSString *)operationID transferInfo:(OIMTransferElem *)transferInfo {
-    NSString *json = Open_im_sdkCreateTransferMessage(operationID, transferInfo.mj_JSONString);
++ (OIMMessageInfo *)CreateTransferMessage:(OIMTransferElem *)transferInfo {
+    NSString *json = Open_im_sdkCreateTransferMessage([OIMManager.manager operationId], transferInfo.mj_JSONString);
     return [self convertToMessageInfo:json];
 }
 
