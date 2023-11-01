@@ -519,7 +519,7 @@
             self.onRecvMessageRedPacketed(packet);
         }
         
-        [self.advancedMsgListeners onRecvRedPacketStatusChanged:packet];
+        [self.advancedMsgListeners onRecvMessageRedPacketed:packet];
     }];
 }
 

@@ -291,7 +291,7 @@ typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMe
 - (void)onMsgDeleted:(OIMMessageInfo *)message;
 
 // 接收红包装填
-- (void)onRecvRedPacketStatusChanged:(OIMMessageRedPacketInfo * _Nullable)redPacketInfo;
+- (void)onRecvMessageRedPacketed:(OIMMessageRedPacketInfo * _Nullable)redPacketInfo;
 
 
 @end

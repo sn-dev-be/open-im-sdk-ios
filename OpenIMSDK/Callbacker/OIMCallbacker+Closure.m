@@ -70,13 +70,13 @@
                                   onRecvC2CReadReceipt:(OIMReceiptCallback)onRecvC2CReadReceipt
                                 onRecvGroupReadReceipt:(OIMReceiptCallback)onRecvGroupReadReceipt
                                       onRecvNewMessage:(OIMMessageInfoCallback)onRecvNewMessage
-                                    onRedPacketMessage:(OIMRedPacketCallback)onRecvRedPacket {
+                                    onRedPacketMessage:(OIMRedPacketCallback)onRecvMessageRedPacketed {
     
     self.onRecvMessageRevoked = onRecvMessageRevoked;
     self.onRecvC2CReadReceipt = onRecvC2CReadReceipt;
     self.onRecvGroupReadReceipt = onRecvGroupReadReceipt;
     self.onRecvNewMessage = onRecvNewMessage;
-    self.onRecvMessageRedPacketed = onRecvRedPacket;
+    self.onRecvMessageRedPacketed = onRecvMessageRedPacketed;
 }
 
 - (void)setSelfUserInfoUpdateListener:(OIMUserInfoCallback)onUserInfoUpdate {
