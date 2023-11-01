@@ -512,6 +512,17 @@
     }];
 }
 
+- (void)onRecvRedPacketStatusChanged:(NSString* _Nullable)redPacketMsg {
+    OIMMessageRedPacketInfo *packet = [OIMMessageRedPacketInfo mj_objectWithKeyValues:redPacketMsg];
+    [self dispatchMainThread:^{
+        if (self.onRecvMessageRedPacketed) {
+            self.onRecvMessageRedPacketed(packet);
+        }
+        
+        [self.advancedMsgListeners onRecvRedPacketStatusChanged:packet];
+    }];
+}
+
 - (void)onRecvNewMessage:(NSString * _Nullable)message {
     OIMMessageInfo *msg = [OIMMessageInfo mj_objectWithKeyValues:message];
     

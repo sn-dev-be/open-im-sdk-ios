@@ -62,3 +62,8 @@
 
 @implementation OIMKeyValues
 @end
+
+
+@implementation OIMMessageRedPacketInfo
+
+@end

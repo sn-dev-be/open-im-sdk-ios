@@ -22,6 +22,7 @@
 #import "OIMMessageElem.h"
 #import "OIMRedPacketElem.h"
 #import "OIMTransferElem.h"
+#import "OIMFullUserInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -209,6 +210,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *clientMsgID;
 
 @property (nonatomic, copy) NSDictionary<NSString *, OIMKeyValue *> *reactionExtensionList;
+
+@end
+
+@interface OIMMessageRedPacketInfo : NSObject
+
+@property (nonatomic, copy)   NSString *clientMsgID; // 消息 ID
+@property (nonatomic, assign) NSInteger seq; // 消息 seq
+@property (nonatomic, copy)   NSString *conversationID; // 会话 ID
+@property (nonatomic, assign) OIMMessageContentType contentType; // 消息类型
+@property (nonatomic, copy)   NSString *redPacketID; // 红包 ID
+@property (nonatomic, strong) OIMPublicUserInfo *claimUser; // 领取用户
 
 @end
 

@@ -73,7 +73,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setAdvancedMsgListenerWithOnRecvMessageRevoked:(OIMRevokedCallback)onRecvMessageRevoked
                                   onRecvC2CReadReceipt:(OIMReceiptCallback)onRecvC2CReadReceipt
                                 onRecvGroupReadReceipt:(OIMReceiptCallback)onRecvGroupReadReceipt
-                                      onRecvNewMessage:(OIMMessageInfoCallback)onRecvNewMessage;
+                                      onRecvNewMessage:(OIMMessageInfoCallback)onRecvNewMessage
+                                    onRedPacketMessage:(OIMRedPacketCallback)onRecvRedPacket;
 
 /**
  * User information listeners

@@ -281,14 +281,16 @@ static NSString *OPENIMSDKTableViewCellIdentifier = @"OPENIMSDKTableViewCellIden
     
     
     [OIMManager.callbacker setAdvancedMsgListenerWithOnRecvMessageRevoked:^(OIMMessageRevokedInfo * _Nullable msgRovoked) {
-        
-    } onRecvC2CReadReceipt:^(NSArray<OIMReceiptInfo *> * _Nullable msgReceiptList) {
-        
-    } onRecvGroupReadReceipt:^(NSArray<OIMReceiptInfo *> * _Nullable msgReceiptList) {
-        
-    } onRecvNewMessage:^(OIMMessageInfo * _Nullable message) {
-        
-    }];
+            
+        } onRecvC2CReadReceipt:^(NSArray<OIMReceiptInfo *> * _Nullable msgReceiptList) {
+            
+        } onRecvGroupReadReceipt:^(NSArray<OIMReceiptInfo *> * _Nullable msgReceiptList) {
+            
+        } onRecvNewMessage:^(OIMMessageInfo * _Nullable message) {
+            
+        } onRedPacketMessage:^(OIMMessageRedPacketInfo * _Nullable msgRedPacket) {
+            
+        }];
 }
 
 - (void)initSDK {

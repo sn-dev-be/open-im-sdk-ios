@@ -65,6 +65,9 @@ typedef void (^OIMMessageSearchCallback)(OIMSearchResultInfo * _Nullable result)
 
 typedef void (^OIMReceiptCallback)(NSArray <OIMReceiptInfo *> * _Nullable msgReceiptList);
 typedef void (^OIMRevokedCallback)(OIMMessageRevokedInfo * _Nullable msgRovoked);
+typedef void (^OIMRedPacketCallback)(OIMMessageRedPacketInfo *_Nullable msgRedPacket);
+
+
 
 typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMessageListInfo * _Nullable result);
 
@@ -287,6 +290,10 @@ typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMe
 
 - (void)onMsgDeleted:(OIMMessageInfo *)message;
 
+// 接收红包装填
+- (void)onRecvRedPacketStatusChanged:(OIMMessageRedPacketInfo * _Nullable)redPacketInfo;
+
+
 @end
 
 /// Custom Business Callbacks for IM
@@ -417,6 +424,7 @@ Open_im_sdk_callbackOnCustomBusinessListener
 @property (nonatomic, nullable, copy) OIMReceiptCallback onRecvGroupReadReceipt;
 @property (nonatomic, nullable, copy) OIMRevokedCallback onRecvMessageRevoked;
 @property (nonatomic, nullable, copy) OIMMessageInfoCallback onMessageDeleted;
+@property (nonatomic, nullable, copy) OIMRedPacketCallback onRecvMessageRedPacketed; // 红包回调
 /**
  * Add advanced message event listener.
  */
@@ -439,6 +447,8 @@ Open_im_sdk_callbackOnCustomBusinessListener
  * Remove IM listener for custom business events.
  */
 - (void)removeCustomBusinessListener:(id<OIMCustomBusinessListener>)listener NS_SWIFT_NAME(removeCustomBusinessListener(listener:));
+
+
 
 @end
 
