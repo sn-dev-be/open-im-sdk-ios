@@ -138,7 +138,8 @@ typedef NS_ENUM(NSInteger, OIMConversationType) {
     OIMConversationTypeC2C,                 /// One-to-one chat
     OIMConversationTypeGroup,               /// Group chat
     OIMConversationTypeSuperGroup = 3,      /// Super group
-    OIMConversationTypeNotification = 4     /// Notification
+    OIMConversationTypeNotification = 4,    /// Notification
+    OIMConversationTypeRoom         = 5     /// Club Room
 };
 
 /*
