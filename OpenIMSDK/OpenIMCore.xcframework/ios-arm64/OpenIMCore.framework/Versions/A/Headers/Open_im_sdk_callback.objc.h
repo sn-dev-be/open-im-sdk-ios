@@ -17,6 +17,8 @@
 @class Open_im_sdk_callbackOnAdvancedMsgListener;
 @protocol Open_im_sdk_callbackOnBatchMsgListener;
 @class Open_im_sdk_callbackOnBatchMsgListener;
+@protocol Open_im_sdk_callbackOnClubListener;
+@class Open_im_sdk_callbackOnClubListener;
 @protocol Open_im_sdk_callbackOnConnListener;
 @class Open_im_sdk_callbackOnConnListener;
 @protocol Open_im_sdk_callbackOnConversationListener;
@@ -58,11 +60,26 @@
 - (void)onRecvNewMessage:(NSString* _Nullable)message;
 - (void)onRecvOfflineNewMessage:(NSString* _Nullable)message;
 - (void)onRecvRedPacketStatusChanged:(NSString* _Nullable)redPacketMsg;
+- (void)onRecvSelfSendRedPacketSeqChanged:(NSString* _Nullable)message;
 @end
 
 @protocol Open_im_sdk_callbackOnBatchMsgListener <NSObject>
 - (void)onRecvNewMessages:(NSString* _Nullable)messageList;
 - (void)onRecvOfflineNewMessages:(NSString* _Nullable)messageList;
+@end
+
+@protocol Open_im_sdk_callbackOnClubListener <NSObject>
+- (void)onClubApplicationAccepted:(NSString* _Nullable)clubApplication;
+- (void)onClubApplicationAdded:(NSString* _Nullable)clubApplication;
+- (void)onClubApplicationDeleted:(NSString* _Nullable)clubApplication;
+- (void)onClubApplicationRejected:(NSString* _Nullable)clubApplication;
+- (void)onClubDismissed:(NSString* _Nullable)clubInfo;
+- (void)onClubInfoChanged:(NSString* _Nullable)clubInfo;
+- (void)onClubMemberAdded:(NSString* _Nullable)clubMemberInfo;
+- (void)onClubMemberDeleted:(NSString* _Nullable)clubMemberInfo;
+- (void)onClubMemberInfoChanged:(NSString* _Nullable)clubMemberInfo;
+- (void)onJoinedClubAdded:(NSString* _Nullable)clubInfo;
+- (void)onJoinedClubDeleted:(NSString* _Nullable)clubInfo;
 @end
 
 @protocol Open_im_sdk_callbackOnConnListener <NSObject>
@@ -208,6 +225,8 @@ FOUNDATION_EXPORT id<Open_im_sdk_callbackOnFriendshipListenerSdk> _Nullable Open
 
 @class Open_im_sdk_callbackOnBatchMsgListener;
 
+@class Open_im_sdk_callbackOnClubListener;
+
 @class Open_im_sdk_callbackOnConnListener;
 
 @class Open_im_sdk_callbackOnConversationListener;
@@ -256,6 +275,7 @@ FOUNDATION_EXPORT id<Open_im_sdk_callbackOnFriendshipListenerSdk> _Nullable Open
 - (void)onRecvNewMessage:(NSString* _Nullable)message;
 - (void)onRecvOfflineNewMessage:(NSString* _Nullable)message;
 - (void)onRecvRedPacketStatusChanged:(NSString* _Nullable)redPacketMsg;
+- (void)onRecvSelfSendRedPacketSeqChanged:(NSString* _Nullable)message;
 @end
 
 @interface Open_im_sdk_callbackOnBatchMsgListener : NSObject <goSeqRefInterface, Open_im_sdk_callbackOnBatchMsgListener> {
@@ -265,6 +285,24 @@ FOUNDATION_EXPORT id<Open_im_sdk_callbackOnFriendshipListenerSdk> _Nullable Open
 - (nonnull instancetype)initWithRef:(_Nonnull id)ref;
 - (void)onRecvNewMessages:(NSString* _Nullable)messageList;
 - (void)onRecvOfflineNewMessages:(NSString* _Nullable)messageList;
+@end
+
+@interface Open_im_sdk_callbackOnClubListener : NSObject <goSeqRefInterface, Open_im_sdk_callbackOnClubListener> {
+}
+@property(strong, readonly) _Nonnull id _ref;
+
+- (nonnull instancetype)initWithRef:(_Nonnull id)ref;
+- (void)onClubApplicationAccepted:(NSString* _Nullable)clubApplication;
+- (void)onClubApplicationAdded:(NSString* _Nullable)clubApplication;
+- (void)onClubApplicationDeleted:(NSString* _Nullable)clubApplication;
+- (void)onClubApplicationRejected:(NSString* _Nullable)clubApplication;
+- (void)onClubDismissed:(NSString* _Nullable)clubInfo;
+- (void)onClubInfoChanged:(NSString* _Nullable)clubInfo;
+- (void)onClubMemberAdded:(NSString* _Nullable)clubMemberInfo;
+- (void)onClubMemberDeleted:(NSString* _Nullable)clubMemberInfo;
+- (void)onClubMemberInfoChanged:(NSString* _Nullable)clubMemberInfo;
+- (void)onJoinedClubAdded:(NSString* _Nullable)clubInfo;
+- (void)onJoinedClubDeleted:(NSString* _Nullable)clubInfo;
 @end
 
 @interface Open_im_sdk_callbackOnConnListener : NSObject <goSeqRefInterface, Open_im_sdk_callbackOnConnListener> {
