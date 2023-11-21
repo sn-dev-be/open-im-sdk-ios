@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -332,27 +332,27 @@
 		4D0EC9432AED1BCD0061ADC4 /* MJExtension */ = {
 			isa = PBXGroup;
 			children = (
-				4D0EC9442AED1BCD0061ADC4 /* MJPropertyKey.h */,
-				4D0EC9452AED1BCD0061ADC4 /* NSObject+MJClass.h */,
-				4D0EC9462AED1BCD0061ADC4 /* NSString+MJExtension.h */,
-				4D0EC9472AED1BCD0061ADC4 /* MJPropertyType.m */,
-				4D0EC9482AED1BCD0061ADC4 /* NSObject+MJProperty.h */,
-				4D0EC9492AED1BCD0061ADC4 /* MJExtensionConst.h */,
-				4D0EC94A2AED1BCD0061ADC4 /* NSObject+MJKeyValue.m */,
-				4D0EC94B2AED1BCD0061ADC4 /* MJProperty.m */,
-				4D0EC94C2AED1BCD0061ADC4 /* MJFoundation.h */,
-				4D0EC94D2AED1BCD0061ADC4 /* NSObject+MJCoding.m */,
 				4D0EC94E2AED1BCD0061ADC4 /* MJExtension.h */,
+				4D0EC9492AED1BCD0061ADC4 /* MJExtensionConst.h */,
 				4D0EC94F2AED1BCD0061ADC4 /* MJExtensionConst.m */,
-				4D0EC9502AED1BCD0061ADC4 /* NSObject+MJProperty.m */,
-				4D0EC9512AED1BCD0061ADC4 /* MJPropertyType.h */,
-				4D0EC9522AED1BCD0061ADC4 /* NSObject+MJClass.m */,
-				4D0EC9532AED1BCD0061ADC4 /* NSString+MJExtension.m */,
-				4D0EC9542AED1BCD0061ADC4 /* MJPropertyKey.m */,
-				4D0EC9552AED1BCD0061ADC4 /* MJProperty.h */,
-				4D0EC9562AED1BCD0061ADC4 /* NSObject+MJKeyValue.h */,
-				4D0EC9572AED1BCD0061ADC4 /* NSObject+MJCoding.h */,
+				4D0EC94C2AED1BCD0061ADC4 /* MJFoundation.h */,
 				4D0EC9582AED1BCD0061ADC4 /* MJFoundation.m */,
+				4D0EC9552AED1BCD0061ADC4 /* MJProperty.h */,
+				4D0EC94B2AED1BCD0061ADC4 /* MJProperty.m */,
+				4D0EC9442AED1BCD0061ADC4 /* MJPropertyKey.h */,
+				4D0EC9542AED1BCD0061ADC4 /* MJPropertyKey.m */,
+				4D0EC9512AED1BCD0061ADC4 /* MJPropertyType.h */,
+				4D0EC9472AED1BCD0061ADC4 /* MJPropertyType.m */,
+				4D0EC9452AED1BCD0061ADC4 /* NSObject+MJClass.h */,
+				4D0EC9522AED1BCD0061ADC4 /* NSObject+MJClass.m */,
+				4D0EC9572AED1BCD0061ADC4 /* NSObject+MJCoding.h */,
+				4D0EC94D2AED1BCD0061ADC4 /* NSObject+MJCoding.m */,
+				4D0EC9562AED1BCD0061ADC4 /* NSObject+MJKeyValue.h */,
+				4D0EC94A2AED1BCD0061ADC4 /* NSObject+MJKeyValue.m */,
+				4D0EC9482AED1BCD0061ADC4 /* NSObject+MJProperty.h */,
+				4D0EC9502AED1BCD0061ADC4 /* NSObject+MJProperty.m */,
+				4D0EC9462AED1BCD0061ADC4 /* NSString+MJExtension.h */,
+				4D0EC9532AED1BCD0061ADC4 /* NSString+MJExtension.m */,
 			);
 			path = MJExtension;
 			sourceTree = "<group>";
