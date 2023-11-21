@@ -203,9 +203,9 @@
     NSString *key = NSStringFromClass(c);
     if (!key) return nil;
     
-//    MJ_LOCK(self.objectClassInArrayLock);
+    MJ_LOCK(self.objectClassInArrayLock);
     Class objectClass = self.objectClassInArrayDict[key];
-//    MJ_UNLOCK(self.objectClassInArrayLock);
+    MJ_UNLOCK(self.objectClassInArrayLock);
     return objectClass;
 }
 @end
