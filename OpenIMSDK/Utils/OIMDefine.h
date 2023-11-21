@@ -114,7 +114,11 @@ typedef NS_ENUM(NSInteger, OIMMessageContentType) {
     OIMMessageContentTypeWithdrawalFailedNotification  =     2007,           //提现失败通知
     OIMMessageContentTypeRedPacketTimeoutNotification    =     2008,           //红包超时通知
     OIMMessageContentTypeReceiveTransferNotification    =     2009,           //收到转账通知
-    
+    OIMMessageContentTypeUnbindWalletNotification    =     2010,           // 钱包绑定解除通知
+    OIMMessageContentTypeJoinedClubNotification     = 1803,                 // 加入部落通知
+    OIMMessageContentTypeJoinedAcceptNotification   = 1805,                 // 加入部落接受通知
+    OIMMessageContentTypeJoinedRefuseNotification   = 1806,                 // 加入部落拒绝通知
+        
 
     
 };
