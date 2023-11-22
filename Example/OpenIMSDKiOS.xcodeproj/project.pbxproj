@@ -309,22 +309,22 @@
 		4D0EC9322AED1BCD0061ADC4 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				4D0EC9332AED1BCD0061ADC4 /* OIMManager+Connection.h */,
-				4D0EC9342AED1BCD0061ADC4 /* OIMManager+Group.h */,
-				4D0EC9352AED1BCD0061ADC4 /* OIMManager+Message.h */,
-				4D0EC9362AED1BCD0061ADC4 /* OIMManager+Conversation.h */,
-				4D0EC9372AED1BCD0061ADC4 /* OIMManager+Friend.m */,
 				4D0EC9382AED1BCD0061ADC4 /* OIMManager.h */,
-				4D0EC9392AED1BCD0061ADC4 /* OIMManager+User.m */,
-				4D0EC93A2AED1BCD0061ADC4 /* OIMManager+Login.h */,
-				4D0EC93B2AED1BCD0061ADC4 /* OIMManager+Message.m */,
-				4D0EC93C2AED1BCD0061ADC4 /* OIMManager+Conversation.m */,
-				4D0EC93D2AED1BCD0061ADC4 /* OIMManager+Group.m */,
-				4D0EC93E2AED1BCD0061ADC4 /* OIMManager+Connection.m */,
 				4D0EC93F2AED1BCD0061ADC4 /* OIMManager.m */,
+				4D0EC9332AED1BCD0061ADC4 /* OIMManager+Connection.h */,
+				4D0EC93E2AED1BCD0061ADC4 /* OIMManager+Connection.m */,
+				4D0EC9362AED1BCD0061ADC4 /* OIMManager+Conversation.h */,
+				4D0EC93C2AED1BCD0061ADC4 /* OIMManager+Conversation.m */,
 				4D0EC9402AED1BCD0061ADC4 /* OIMManager+Friend.h */,
-				4D0EC9412AED1BCD0061ADC4 /* OIMManager+User.h */,
+				4D0EC9372AED1BCD0061ADC4 /* OIMManager+Friend.m */,
+				4D0EC9342AED1BCD0061ADC4 /* OIMManager+Group.h */,
+				4D0EC93D2AED1BCD0061ADC4 /* OIMManager+Group.m */,
+				4D0EC93A2AED1BCD0061ADC4 /* OIMManager+Login.h */,
 				4D0EC9422AED1BCD0061ADC4 /* OIMManager+Login.m */,
+				4D0EC9352AED1BCD0061ADC4 /* OIMManager+Message.h */,
+				4D0EC93B2AED1BCD0061ADC4 /* OIMManager+Message.m */,
+				4D0EC9412AED1BCD0061ADC4 /* OIMManager+User.h */,
+				4D0EC9392AED1BCD0061ADC4 /* OIMManager+User.m */,
 			);
 			path = Interface;
 			sourceTree = "<group>";

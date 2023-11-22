@@ -87,6 +87,46 @@
     Open_im_sdkGetGroupMemberList(callback, [self operationId], groupID, (int32_t)filter, (int32_t)offset, (int32_t)count);
 }
 
+- (void)GetGroupSavedListSplit:(NSInteger)offset
+                         count:(NSInteger)count
+                     onSuccess:(OIMGroupsInfoCallback)onSuccess
+                     onFailure:(OIMFailureCallback)onFailure {
+        CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
+            if (onSuccess) {
+                onSuccess([OIMGroupInfo mj_objectArrayWithKeyValuesArray:data]);
+            }
+        } onFailure:onFailure];
+    
+    Open_im_sdkGetGroupSavedListSplit(callback, [self operationId], offset, count);
+}
+
+- (void)saveGroup:(NSString *)groupID 
+        onSuccess:(OIMStringCallback)onSuccess
+        onFailure:(OIMFailureCallback)onFailure {
+    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:^(NSString * _Nullable data) {
+        if (onSuccess) {
+            onSuccess(data);
+        }
+    } onFailure:onFailure];
+    
+    
+    Open_im_sdkSaveGroup(callback, [self operationId], groupID);
+}
+
+- (void)unsaveGroup:(NSString *)groupID
+        onSuccess:(OIMStringCallback)onSuccess
+        onFailure:(OIMFailureCallback)onFailure {
+    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:^(NSString * _Nullable data) {
+        if (onSuccess) {
+            onSuccess(data);
+        }
+    } onFailure:onFailure];
+    
+    
+    Open_im_sdkSaveGroup(callback, [self operationId], groupID);
+}
+
+
 - (void)getSpecifiedGroupMembersInfo:(NSString *)groupID
                              usersID:(NSArray <NSString *> *)usersID
                            onSuccess:(nullable OIMGroupMembersInfoCallback)onSuccess

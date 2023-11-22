@@ -68,7 +68,6 @@ typedef void (^OIMRevokedCallback)(OIMMessageRevokedInfo * _Nullable msgRovoked)
 typedef void (^OIMRedPacketCallback)(OIMMessageRedPacketInfo *_Nullable msgRedPacket);
 
 
-
 typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMessageListInfo * _Nullable result);
 
 /// IMSDK Core Callbacks
