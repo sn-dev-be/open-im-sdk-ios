@@ -73,6 +73,10 @@ NS_ASSUME_NONNULL_BEGIN
                      groupID:(NSString * _Nullable)groupID
                    onSuccess:(nullable OIMFullUsersInfoCallback)onSuccess
                    onFailure:(nullable OIMFailureCallback)onFailure;
+
+- (void)isBeBlock:(NSString *)userID
+        onSuccess:(nullable OIMBoolCallback)onSuccess
+        onFailure:(nullable OIMFailureCallback)onFailure;
 @end
 
 NS_ASSUME_NONNULL_END

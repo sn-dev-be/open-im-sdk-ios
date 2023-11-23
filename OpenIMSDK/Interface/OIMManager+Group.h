@@ -78,7 +78,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 获取保存的群聊
 /// @param offset  Starting offset
-/// @param countMember count
+/// @param count count
 - (void)GetGroupSavedListSplit:(NSInteger)offset
                          count:(NSInteger)count
                      onSuccess:(OIMGroupsInfoCallback)onSuccess
@@ -88,14 +88,14 @@ NS_ASSUME_NONNULL_BEGIN
 /// save Group
 /// @param groupID Group ID
 - (void)saveGroup:(NSString *)groupID
-        onSuccess:(OIMStringCallback)onSuccess
+        onSuccess:(OIMBoolCallback)onSuccess
         onFailure:(OIMFailureCallback)onFailure;
 
 
 /// unsave Group
 /// @param groupID Group ID
 - (void)unsaveGroup:(NSString *)groupID
-          onSuccess:(OIMStringCallback)onSuccess
+          onSuccess:(OIMBoolCallback)onSuccess
           onFailure:(OIMFailureCallback)onFailure;
 
 /**

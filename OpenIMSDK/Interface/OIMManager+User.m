@@ -104,4 +104,17 @@
     
     Open_im_sdkGetUsersInfoWithCache(callback, [self operationId], userIDs.mj_JSONString, groupID ?: @"");
 }
+
+- (void)isBeBlock:(NSString *)userID
+        onSuccess:(nullable OIMBoolCallback)onSuccess
+        onFailure:(nullable OIMFailureCallback)onFailure {
+    CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
+        if (onSuccess) {
+            onSuccess([data isEqualToString:@"true"]);
+        }
+    } onFailure:onFailure];
+    
+    Open_im_sdkIsBeBlock(callback, [self operationId], userID);
+}
+
 @end

@@ -101,11 +101,11 @@
 }
 
 - (void)saveGroup:(NSString *)groupID 
-        onSuccess:(OIMStringCallback)onSuccess
+        onSuccess:(OIMBoolCallback)onSuccess
         onFailure:(OIMFailureCallback)onFailure {
     CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:^(NSString * _Nullable data) {
         if (onSuccess) {
-            onSuccess(data);
+            onSuccess([data isEqualToString:@"true"]);
         }
     } onFailure:onFailure];
     
@@ -114,11 +114,11 @@
 }
 
 - (void)unsaveGroup:(NSString *)groupID
-        onSuccess:(OIMStringCallback)onSuccess
+        onSuccess:(OIMBoolCallback)onSuccess
         onFailure:(OIMFailureCallback)onFailure {
     CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:^(NSString * _Nullable data) {
         if (onSuccess) {
-            onSuccess(data);
+            onSuccess([data isEqualToString:@"true"]);
         }
     } onFailure:onFailure];
     
