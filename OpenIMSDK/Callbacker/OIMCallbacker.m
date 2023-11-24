@@ -523,6 +523,17 @@
     }];
 }
 
+- (void)onRecvSelfSendRedPacketSeqChanged:(NSString* _Nullable)message {
+    OIMMessageInfo *msg = [OIMMessageInfo mj_objectWithKeyValues:message];
+    [self dispatchMainThread:^{
+        if (self.onRecvNewMessage) {
+            self.onRecvNewMessage(msg);
+        }
+        
+        [self.advancedMsgListeners onRecvSelfSendRedPacketSeqChanged:msg];
+    }];
+}
+
 - (void)onRecvNewMessage:(NSString * _Nullable)message {
     OIMMessageInfo *msg = [OIMMessageInfo mj_objectWithKeyValues:message];
     
