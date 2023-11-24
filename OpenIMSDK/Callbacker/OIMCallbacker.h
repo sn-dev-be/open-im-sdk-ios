@@ -289,7 +289,7 @@ typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMe
 
 - (void)onMsgDeleted:(OIMMessageInfo *)message;
 
-// 接收红包装填
+// 修改红包状态
 - (void)onRecvMessageRedPacketed:(OIMMessageRedPacketInfo * _Nullable)redPacketInfo;
 
 // 发送红包之后的回调

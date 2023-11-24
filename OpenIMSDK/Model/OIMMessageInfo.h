@@ -221,6 +221,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) OIMMessageContentType contentType; // 消息类型
 @property (nonatomic, copy)   NSString *redPacketID; // 红包 ID
 @property (nonatomic, strong) OIMPublicUserInfo *claimUser; // 领取用户
+@property (nonatomic, assign) NSInteger status; // 红包状态
 
 @end
 
