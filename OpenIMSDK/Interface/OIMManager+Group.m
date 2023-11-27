@@ -122,8 +122,7 @@
         }
     } onFailure:onFailure];
     
-    
-    Open_im_sdkSaveGroup(callback, [self operationId], groupID);
+    Open_im_sdkUnsaveGroup(callback, [self operationId], groupID);
 }
 
 
