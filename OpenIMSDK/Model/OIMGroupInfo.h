@@ -45,6 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) OIMAllowType applyMemberFriend;
 @property (nonatomic, assign) NSInteger notificationUpdateTime;
 @property (nonatomic, nullable, copy) NSString *notificationUserID;
+@property (nonatomic, assign) NSInteger saved; //
 
 @end
 
