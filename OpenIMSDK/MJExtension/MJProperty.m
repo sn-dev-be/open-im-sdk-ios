@@ -18,7 +18,7 @@
 @property (strong, nonatomic) dispatch_semaphore_t propertyKeysLock;
 @property (strong, nonatomic) dispatch_semaphore_t objectClassInArrayLock;
 
-@property (nonatomic, strong) dispatch_queue_t priorityQueue; // 优先级队列
+//@property (nonatomic, strong) dispatch_queue_t priorityQueue; // 优先级队列
 @end
 
 @implementation MJProperty
@@ -32,9 +32,9 @@
         _propertyKeysLock = dispatch_semaphore_create(1);
         _objectClassInArrayLock = dispatch_semaphore_create(1);
         
-        // 初始化 - Mark
-        self.priorityQueue = dispatch_queue_create("com.mark.priorityQueue", DISPATCH_QUEUE_CONCURRENT);
-        dispatch_set_target_queue(self.priorityQueue, dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0));
+//        // 初始化 - Mark
+//        self.priorityQueue = dispatch_queue_create("com.mark.priorityQueue", DISPATCH_QUEUE_CONCURRENT);
+//        dispatch_set_target_queue(self.priorityQueue, dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0));
     }
     return self;
 }
@@ -204,31 +204,31 @@
     MJ_UNLOCK(self.objectClassInArrayLock);
 }
 
-//- (Class)objectClassInArrayForClass:(Class)c
-//{
-//    NSString *key = NSStringFromClass(c);
-//    if (!key) return nil;
-//    
-//    MJ_LOCK(self.objectClassInArrayLock);
-//    Class objectClass = self.objectClassInArrayDict[key];
-//    MJ_UNLOCK(self.objectClassInArrayLock);
-//    return objectClass;
-//}
-
-// 替换原有方法
 - (Class)objectClassInArrayForClass:(Class)c
 {
-    __block Class objectClass = nil;
     NSString *key = NSStringFromClass(c);
     if (!key) return nil;
     
-    dispatch_sync(self.priorityQueue, ^{
-        MJ_LOCK(self.objectClassInArrayLock);
-        objectClass = self.objectClassInArrayDict[key];
-        MJ_UNLOCK(self.objectClassInArrayLock);
-    });
-
+    MJ_LOCK(self.objectClassInArrayLock);
+    Class objectClass = self.objectClassInArrayDict[key];
+    MJ_UNLOCK(self.objectClassInArrayLock);
     return objectClass;
 }
+
+// 替换原有方法
+//- (Class)objectClassInArrayForClass:(Class)c
+//{
+//    __block Class objectClass = nil;
+//    NSString *key = NSStringFromClass(c);
+//    if (!key) return nil;
+//    
+//    dispatch_sync(self.priorityQueue, ^{
+//        MJ_LOCK(self.objectClassInArrayLock);
+//        objectClass = self.objectClassInArrayDict[key];
+//        MJ_UNLOCK(self.objectClassInArrayLock);
+//    });
+//
+//    return objectClass;
+//}
 
 @end
