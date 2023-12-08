@@ -149,6 +149,18 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)markConversationMessageAsRead:(NSString *)conversationID
                             onSuccess:(nullable OIMSuccessCallback)onSuccess
                             onFailure:(nullable OIMFailureCallback)onFailure;
+
+/// 清理未读消息
+/// - Parameters:
+///   - msgID: 消息ID
+///   - conversationID: 会话ID
+///   - onSuccess: 成功回调
+///   - onFailure: 失败回调
+- (void)markMessagesAsReadByMsgID:(NSString *)msgID
+                   conversationID:(NSString *)conversationID
+                        onSuccess:(nullable OIMSuccessCallback)onSuccess
+                        onFailure:(nullable OIMFailureCallback)onFailure;
+
 @end
 
 NS_ASSUME_NONNULL_END
