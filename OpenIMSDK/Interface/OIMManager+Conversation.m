@@ -181,13 +181,13 @@
     Open_im_sdkMarkConversationMessageAsRead(callback, [self operationId], conversationID);
 }
 
-- (void)markMessagesAsReadByMsgID:(NSString *)msgID
-                   conversationID:(NSString *)conversationID
-                        onSuccess:(nullable OIMSuccessCallback)onSuccess
-                        onFailure:(nullable OIMFailureCallback)onFailure {
+- (void)markMessagesAsReadByMsgIDs:(NSArray<NSString *> *)msgIDs
+                    conversationID:(NSString *)conversationID
+                         onSuccess:(nullable OIMSuccessCallback)onSuccess
+                         onFailure:(nullable OIMFailureCallback)onFailure {
     CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:onSuccess onFailure:onFailure];
     
-    Open_im_sdkMarkMessagesAsReadByMsgID(callback, [self operationId], conversationID, msgID);
+    Open_im_sdkMarkMessagesAsReadByMsgID(callback, [self operationId], conversationID, msgIDs.mj_JSONString);
 }
 
 @end
