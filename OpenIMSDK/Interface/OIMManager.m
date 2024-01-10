@@ -117,4 +117,13 @@
     Open_im_sdkNetworkStatusChanged(callback, [self operationId]);
 }
 
+- (void)updateNetworkStatus:(BOOL)status {
+    if (!status) {
+        CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
+        } onFailure:^(NSInteger code, NSString * _Nullable msg) {
+        }];
+        Open_im_sdkNetworkStatusChanged(callback, [self operationId]);
+    }
+}
+
 @end

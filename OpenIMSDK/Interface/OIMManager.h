@@ -32,6 +32,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)getLoginUserID;
 
 - (NSString *)operationId;
+
+- (void)updateNetworkStatus:(BOOL)status;
+
 @end
 
 NS_ASSUME_NONNULL_END
