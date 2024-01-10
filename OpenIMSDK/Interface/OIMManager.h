@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "OIMCallbacker.h"
+#import "CallbackProxy.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -32,6 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)getLoginUserID;
 
 - (NSString *)operationId;
+
+- (CallbackProxy *)getCallbackProxy;
 
 - (void)updateNetworkStatus:(BOOL)status;
 

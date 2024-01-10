@@ -7,7 +7,7 @@
 
 #import "OIMManager.h"
 #import "Reachability.h"
-#import "CallbackProxy.h"
+
 
 @interface OIMManager ()
 {
@@ -115,6 +115,14 @@
     }];
     
     Open_im_sdkNetworkStatusChanged(callback, [self operationId]);
+}
+
+- (CallbackProxy *)getCallbackProxy {
+    return [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
+        
+    } onFailure:^(NSInteger code, NSString * _Nullable msg) {
+        
+    }];
 }
 
 - (void)updateNetworkStatus:(BOOL)status {
