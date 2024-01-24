@@ -93,6 +93,7 @@
 @protocol Open_im_sdk_callbackOnConversationListener <NSObject>
 - (void)onConversationChanged:(NSString* _Nullable)conversationList;
 - (void)onNewConversation:(NSString* _Nullable)conversationList;
+- (void)onServerUnreadMessageCountChanged:(NSString* _Nullable)serverID totalUnreadCount:(int32_t)totalUnreadCount;
 /**
  * OnSyncServerProgress(progress int)
  */
@@ -324,6 +325,7 @@ FOUNDATION_EXPORT id<Open_im_sdk_callbackOnFriendshipListenerSdk> _Nullable Open
 - (nonnull instancetype)initWithRef:(_Nonnull id)ref;
 - (void)onConversationChanged:(NSString* _Nullable)conversationList;
 - (void)onNewConversation:(NSString* _Nullable)conversationList;
+- (void)onServerUnreadMessageCountChanged:(NSString* _Nullable)serverID totalUnreadCount:(int32_t)totalUnreadCount;
 /**
  * OnSyncServerProgress(progress int)
  */
