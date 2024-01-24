@@ -314,6 +314,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)isJoinedGroup:(NSString *)groupID
             onSuccess:(nullable OIMBoolCallback)onSuccess
             onFailure:(nullable OIMFailureCallback)onFailure;
+
+
+- (void)getServerConversationUnreadCount:(NSString *)groupID
+                               onSuccess:(nullable OIMSuccessCallback)onSuccess
+                               onFailure:(nullable OIMFailureCallback)onFailure;
 @end
 
 NS_ASSUME_NONNULL_END

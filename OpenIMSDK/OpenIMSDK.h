@@ -18,6 +18,7 @@
 #import "OIMManager+Login.h"
 #import "OIMManager+Message.h"
 #import "OIMManager+User.h"
+#import "OIMManager+Call.h"
 
 #import "OIMCallbacker.h"
 #import "OIMCallbacker+Closure.h"

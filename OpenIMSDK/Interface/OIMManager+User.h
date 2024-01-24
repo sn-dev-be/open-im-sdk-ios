@@ -77,6 +77,23 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)isBeBlock:(NSString *)userID
         onSuccess:(nullable OIMBoolCallback)onSuccess
         onFailure:(nullable OIMFailureCallback)onFailure;
+
+- (void)setUserAllowBeep:(BOOL)isAllowed
+               onSuccess:(nullable OIMBoolCallback)onSuccess
+               onFailure:(nullable OIMFailureCallback)onFailure;
+
+- (void)setUserAllowVibration:(BOOL)isAllowed
+                    onSuccess:(nullable OIMBoolCallback)onSuccess
+                    onFailure:(nullable OIMFailureCallback)onFailure;
+
+- (void)setUserAllowPushContent:(BOOL)isAllowed
+                      onSuccess:(nullable OIMBoolCallback)onSuccess
+                      onFailure:(nullable OIMFailureCallback)onFailure;
+
+- (void)setUserAllowOnlinePush:(BOOL)isAllowed
+                     onSuccess:(nullable OIMBoolCallback)onSuccess
+                     onFailure:(nullable OIMFailureCallback)onFailure;
+
 @end
 
 NS_ASSUME_NONNULL_END

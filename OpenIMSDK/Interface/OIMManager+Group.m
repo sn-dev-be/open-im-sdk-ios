@@ -371,4 +371,17 @@
     
     Open_im_sdkIsJoinGroup(callback, [self operationId], groupID);
 }
+
+- (void)getServerConversationUnreadCount:(NSString *)groupID
+                               onSuccess:(nullable OIMSuccessCallback)onSuccess
+                               onFailure:(nullable OIMFailureCallback)onFailure {
+    CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
+        NSLog(@"需要查看返回的数据格式, 再定义回调");
+//        if (onSuccess) {
+//            onSuccess([data isEqualToString:@"true"]);
+//        }
+    } onFailure:onFailure];
+    Open_im_sdkGetServerConversationUnreadCount(callback, [self operationId], groupID);
+}
+
 @end
