@@ -67,7 +67,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * @param imagePath Absolute path
  */
-+ (OIMMessageInfo *)createImageMessageFromFullPath:(NSString *)imagePath;
++ (OIMMessageInfo *)createImageMessageFromFullPath:(NSString *)imagePath encodePlaceholderImage:(NSString *)encodePlaceholderImage;
 
 /*
  * Create an audio message. For example: upload your own audio file and then use the returned URL to send the message.

@@ -62,8 +62,8 @@
     return [self convertToMessageInfo:json];
 }
 
-+ (OIMMessageInfo *)createImageMessageFromFullPath:(NSString *)imagePath {
-    NSString *json = Open_im_sdkCreateImageMessageFromFullPath([OIMManager.manager operationId], imagePath);
++ (OIMMessageInfo *)createImageMessageFromFullPath:(NSString *)imagePath encodePlaceholderImage:(NSString *)encodePlaceholderImage {
+    NSString *json = Open_im_sdkCreateImageMessageFromFullPath([OIMManager.manager operationId], imagePath, encodePlaceholderImage);
     
     return [self convertToMessageInfo:json];
 }
