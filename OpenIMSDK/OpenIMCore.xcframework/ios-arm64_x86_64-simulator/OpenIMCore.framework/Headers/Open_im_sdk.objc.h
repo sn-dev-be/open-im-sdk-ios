@@ -131,7 +131,7 @@ FOUNDATION_EXPORT NSString* _Nonnull Open_im_sdkCreateImageMessage(NSString* _Nu
 
 FOUNDATION_EXPORT NSString* _Nonnull Open_im_sdkCreateImageMessageByURL(NSString* _Nullable operationID, NSString* _Nullable sourcePath, NSString* _Nullable sourcePicture, NSString* _Nullable bigPicture, NSString* _Nullable snapshotPicture);
 
-FOUNDATION_EXPORT NSString* _Nonnull Open_im_sdkCreateImageMessageFromFullPath(NSString* _Nullable operationID, NSString* _Nullable imageFullPath);
+FOUNDATION_EXPORT NSString* _Nonnull Open_im_sdkCreateImageMessageFromFullPath(NSString* _Nullable operationID, NSString* _Nullable imageFullPath, NSString* _Nullable encodePlaceholderImage);
 
 FOUNDATION_EXPORT NSString* _Nonnull Open_im_sdkCreateLocationMessage(NSString* _Nullable operationID, NSString* _Nullable description, double longitude, double latitude);
 
@@ -227,6 +227,8 @@ FOUNDATION_EXPORT NSString* _Nonnull Open_im_sdkGetLoginUserID(void);
 FOUNDATION_EXPORT void Open_im_sdkGetMultipleConversation(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable conversationIDList);
 
 FOUNDATION_EXPORT void Open_im_sdkGetOneConversation(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, int32_t sessionType, NSString* _Nullable sourceID);
+
+FOUNDATION_EXPORT void Open_im_sdkGetRtcToken(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable userID, NSString* _Nullable channelID, int32_t roleType);
 
 FOUNDATION_EXPORT NSString* _Nonnull Open_im_sdkGetSdkVersion(void);
 
