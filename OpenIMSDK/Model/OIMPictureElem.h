@@ -64,6 +64,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, nullable, strong) OIMPictureInfo *snapshotPicture;
 
+/**
+ * Thumbnail image details
+ */
+@property (nonatomic, nullable, copy) NSString *placeholderPicture;
+
 @end
 
 NS_ASSUME_NONNULL_END
