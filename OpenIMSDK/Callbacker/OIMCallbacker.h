@@ -261,7 +261,7 @@ typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMe
  */
 - (void)onTotalUnreadMessageCountChanged:(NSInteger)totalUnreadCount;
 
-- (void)onServerUnreadMessageCountChanged:(NSString* _Nullable)serverID totalUnreadCount:(int32_t)totalUnreadCount;
+- (void)onServerUnreadMessageCountChanged:(NSString* _Nullable)serverID totalUnreadCount:(NSInteger)totalUnreadCount;
 
 @end
 
