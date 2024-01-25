@@ -257,6 +257,8 @@ static NSString *OPENIMSDKTableViewCellIdentifier = @"OPENIMSDKTableViewCellIden
         
     } onTotalUnreadMessageCountChanged:^(NSInteger number) {
         
+    } onServerUnreadMessageCountChanged:^(NSString * _Nullable kindID, NSInteger number) {
+        
     }];
     
     [OIMManager.callbacker setFriendListenerWithOnBlackAdded:^(OIMBlackInfo * _Nullable blackInfo) {

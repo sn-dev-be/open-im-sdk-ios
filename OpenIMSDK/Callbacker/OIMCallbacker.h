@@ -261,6 +261,8 @@ typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMe
  */
 - (void)onTotalUnreadMessageCountChanged:(NSInteger)totalUnreadCount;
 
+- (void)onServerUnreadMessageCountChanged:(NSString* _Nullable)serverID totalUnreadCount:(int32_t)totalUnreadCount;
+
 @end
 
 /// Advanced Message Listener
@@ -407,6 +409,7 @@ Open_im_sdk_callbackOnCustomBusinessListener
 @property (nonatomic, nullable, copy) OIMConversationsInfoCallback onNewConversation;
 @property (nonatomic, nullable, copy) OIMConversationsInfoCallback onConversationChanged;
 @property (nonatomic, nullable, copy) OIMNumberCallback onTotalUnreadMessageCountChanged;
+@property (nonatomic, nullable, copy) OIMNumberTupleCallback onServerUnreadMessageCountChanged;
 
 /**
  * Add conversation listener.

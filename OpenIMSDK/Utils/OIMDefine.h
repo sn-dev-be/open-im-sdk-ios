@@ -24,10 +24,13 @@ typedef void (^OIMVoidCallback)(void);
 typedef void (^OIMSuccessCallback)(NSString * _Nullable data);
 typedef void (^OIMFailureCallback)(NSInteger code, NSString * _Nullable msg);
 typedef void (^OIMNumberCallback)(NSInteger number);
+typedef void (^OIMNumberCallback)(NSInteger number);
 typedef void (^OIMBoolCallback)(BOOL result);
 typedef void (^OIMStringCallback)(NSString * _Nullable item);
 typedef void (^OIMStringArrayCallback)(NSString * _Nullable value1, NSArray<NSString *> * _Nullable value2);
 typedef void (^OIMObjectCallback)(NSDictionary * _Nullable item);
+typedef void (^OIMNumberTupleCallback)(NSString * _Nullable kindID, NSInteger number);
+
 
 /*
  * Message Types

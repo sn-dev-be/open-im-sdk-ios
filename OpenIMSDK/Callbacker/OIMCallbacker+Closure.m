@@ -14,13 +14,16 @@
                                   onSyncServerFailed:(OIMVoidCallback)onSyncServerFailed
                                onConversationChanged:(OIMConversationsInfoCallback)onConversationChanged
                                    onNewConversation:(OIMConversationsInfoCallback)onNewConversation
-                    onTotalUnreadMessageCountChanged:(OIMNumberCallback)onTotalUnreadMessageCountChanged {
+                    onTotalUnreadMessageCountChanged:(OIMNumberCallback)onTotalUnreadMessageCountChanged
+                   onServerUnreadMessageCountChanged:(OIMNumberTupleCallback)onServerUnreadMessageCountChanged
+    {
     self.syncServerStart = onSyncServerStart;
     self.syncServerFinish = onSyncServerFinish;
     self.syncServerFailed = onSyncServerFailed;
     self.onConversationChanged = onConversationChanged;
     self.onNewConversation = onNewConversation;
     self.onTotalUnreadMessageCountChanged = onTotalUnreadMessageCountChanged;
+    self.onServerUnreadMessageCountChanged = onServerUnreadMessageCountChanged;
 }
 
 - (void)setFriendListenerWithOnBlackAdded:(OIMBlackInfoCallback)onBlackAdded

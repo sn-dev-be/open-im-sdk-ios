@@ -23,7 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
                                   onSyncServerFailed:(OIMVoidCallback)onSyncServerFailed
                                onConversationChanged:(OIMConversationsInfoCallback)onConversationChanged
                                    onNewConversation:(OIMConversationsInfoCallback)onNewConversation
-                    onTotalUnreadMessageCountChanged:(OIMNumberCallback)onTotalUnreadMessageCountChanged;
+                    onTotalUnreadMessageCountChanged:(OIMNumberCallback)onTotalUnreadMessageCountChanged
+                   onServerUnreadMessageCountChanged:(OIMNumberTupleCallback)onServerUnreadMessageCountChanged;
 
 /**
  * Set friend relationship listeners

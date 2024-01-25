@@ -643,6 +643,17 @@
     }];
 }
 
+- (void)onServerUnreadMessageCountChanged:(NSString *)serverID totalUnreadCount:(int32_t)totalUnreadCount {
+    [self dispatchMainThread:^{
+        if (self.onServerUnreadMessageCountChanged) {
+            self.onServerUnreadMessageCountChanged(serverID, totalUnreadCount);
+        }
+        [self.conversationListeners onServerUnreadMessageCountChanged:serverID totalUnreadCount:totalUnreadCount];
+    }];
+    
+    
+}
+
 #pragma mark -
 #pragma mark - CustomBusiness
 
