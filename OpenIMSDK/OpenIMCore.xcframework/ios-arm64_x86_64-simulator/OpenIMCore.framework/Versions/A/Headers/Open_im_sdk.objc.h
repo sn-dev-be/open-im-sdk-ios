@@ -94,6 +94,8 @@ FOUNDATION_EXPORT void Open_im_sdkAddBlack(id<Open_im_sdk_callbackBase> _Nullabl
 
 FOUNDATION_EXPORT void Open_im_sdkAddFriend(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable userIDReqMsg);
 
+FOUNDATION_EXPORT void Open_im_sdkAllowedSendMsg(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable targetUserID);
+
 FOUNDATION_EXPORT void Open_im_sdkChangeGroupMemberMute(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable groupID, NSString* _Nullable userID, long mutedSeconds);
 
 FOUNDATION_EXPORT void Open_im_sdkChangeGroupMute(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable groupID, BOOL isMute);
@@ -409,7 +411,11 @@ FOUNDATION_EXPORT void Open_im_sdkSetUserAllowOnlinePush(id<Open_im_sdk_callback
 
 FOUNDATION_EXPORT void Open_im_sdkSetUserAllowPushContent(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, int32_t opt);
 
+FOUNDATION_EXPORT void Open_im_sdkSetUserAllowStrangerMsg(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, int32_t opt);
+
 FOUNDATION_EXPORT void Open_im_sdkSetUserAllowVibration(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, int32_t opt);
+
+FOUNDATION_EXPORT void Open_im_sdkSetUserLanguage(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable language);
 
 FOUNDATION_EXPORT void Open_im_sdkSetUserListener(id<Open_im_sdk_callbackOnUserListener> _Nullable listener);
 
