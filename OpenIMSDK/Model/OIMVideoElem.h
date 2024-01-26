@@ -59,6 +59,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign) CGFloat snapshotHeight;
 
+@property (nonatomic, nullable, copy) NSString *encodePlaceholderImage;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

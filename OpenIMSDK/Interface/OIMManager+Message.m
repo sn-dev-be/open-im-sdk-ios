@@ -117,8 +117,9 @@
 + (OIMMessageInfo *)createVideoMessageFromFullPath:(NSString *)videoPath
                                          videoType:(NSString *)videoType
                                           duration:(NSInteger)duration
-                                      snapshotPath:(NSString *)snapshotPath {
-    NSString *json = Open_im_sdkCreateVideoMessageFromFullPath([OIMManager.manager operationId], videoPath, videoType, duration, snapshotPath);
+                                      snapshotPath:(NSString *)snapshotPath
+                            encodePlaceholderImage:(NSString *)encodePlaceholderImage {
+    NSString *json = Open_im_sdkCreateVideoMessageFromFullPath([OIMManager.manager operationId], videoPath, videoType, duration, snapshotPath, encodePlaceholderImage);
     
     return [self convertToMessageInfo:json];
 }

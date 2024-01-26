@@ -128,7 +128,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (OIMMessageInfo *)createVideoMessageFromFullPath:(NSString *)videoPath
                                          videoType:(NSString *)videoType
                                           duration:(NSInteger)duration
-                                      snapshotPath:(NSString *)snapshotPath;
+                                      snapshotPath:(NSString *)snapshotPath
+                            encodePlaceholderImage:(NSString *)encodePlaceholderImage;
 
 /*
  * Create a video message. For example: upload your own video file and then use the returned URL to send the message.
