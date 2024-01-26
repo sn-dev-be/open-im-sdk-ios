@@ -161,7 +161,7 @@ FOUNDATION_EXPORT NSString* _Nonnull Open_im_sdkCreateVideoMessage(NSString* _Nu
 
 FOUNDATION_EXPORT NSString* _Nonnull Open_im_sdkCreateVideoMessageByURL(NSString* _Nullable operationID, NSString* _Nullable videoBaseInfo);
 
-FOUNDATION_EXPORT NSString* _Nonnull Open_im_sdkCreateVideoMessageFromFullPath(NSString* _Nullable operationID, NSString* _Nullable videoFullPath, NSString* _Nullable videoType, int64_t duration, NSString* _Nullable snapshotFullPath);
+FOUNDATION_EXPORT NSString* _Nonnull Open_im_sdkCreateVideoMessageFromFullPath(NSString* _Nullable operationID, NSString* _Nullable videoFullPath, NSString* _Nullable videoType, int64_t duration, NSString* _Nullable snapshotFullPath, NSString* _Nullable encodePlaceholderImage);
 
 FOUNDATION_EXPORT void Open_im_sdkDeleteAllMsgFromLocal(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID);
 
