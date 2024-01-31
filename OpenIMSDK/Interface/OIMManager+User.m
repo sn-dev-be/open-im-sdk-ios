@@ -106,11 +106,11 @@
 }
 
 - (void)isBeBlock:(NSString *)userID
-        onSuccess:(nullable OIMBoolCallback)onSuccess
+        onSuccess:(nullable OIMSuccessCallback)onSuccess
         onFailure:(nullable OIMFailureCallback)onFailure {
     CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
         if (onSuccess) {
-            onSuccess([data isEqualToString:@""""] || data.length == 0 || [data containsString:@""""]);
+            onSuccess(data);
         }
     } onFailure:onFailure];
     
@@ -118,11 +118,11 @@
 }
 
 - (void)setUserAllowBeep:(BOOL)isAllowed
-               onSuccess:(nullable OIMBoolCallback)onSuccess
+               onSuccess:(nullable OIMSuccessCallback)onSuccess
                onFailure:(nullable OIMFailureCallback)onFailure {
     CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
         if (onSuccess) {
-            onSuccess([data isEqualToString:@""""] || data.length == 0 || [data containsString:@""""]);
+            onSuccess(data);
         }
     } onFailure:onFailure];
     int32_t opt = isAllowed ? 1 : 2;
@@ -130,11 +130,11 @@
 }
 
 - (void)setUserAllowVibration:(BOOL)isAllowed
-                    onSuccess:(nullable OIMBoolCallback)onSuccess
+                    onSuccess:(nullable OIMSuccessCallback)onSuccess
                     onFailure:(nullable OIMFailureCallback)onFailure {
     CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
         if (onSuccess) {
-            onSuccess([data isEqualToString:@""""] || data.length == 0 || [data containsString:@""""]);
+            onSuccess(data);
         }
     } onFailure:onFailure];
     int32_t opt = isAllowed ? 1 : 2;
@@ -142,11 +142,11 @@
 }
 
 - (void)setUserAllowPushContent:(BOOL)isAllowed
-                      onSuccess:(nullable OIMBoolCallback)onSuccess
+                      onSuccess:(nullable OIMSuccessCallback)onSuccess
                       onFailure:(nullable OIMFailureCallback)onFailure {
     CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
         if (onSuccess) {
-            onSuccess([data isEqualToString:@""""] || data.length == 0 || [data containsString:@""""]);
+            onSuccess(data);
         }
     } onFailure:onFailure];
     int32_t opt = isAllowed ? 1 : 2;
@@ -154,11 +154,11 @@
 }
 
 - (void)setUserAllowOnlinePush:(BOOL)isAllowed
-                     onSuccess:(nullable OIMBoolCallback)onSuccess
+                     onSuccess:(nullable OIMSuccessCallback)onSuccess
                      onFailure:(nullable OIMFailureCallback)onFailure {
     CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
         if (onSuccess) {
-            onSuccess([data isEqualToString:@""""] || data.length == 0 || [data containsString:@""""]);
+            onSuccess(data);
         }
     } onFailure:onFailure];
     int32_t opt = isAllowed ? 1 : 2;
