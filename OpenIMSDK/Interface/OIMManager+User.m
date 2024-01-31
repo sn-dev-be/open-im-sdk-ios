@@ -122,7 +122,7 @@
                onFailure:(nullable OIMFailureCallback)onFailure {
     CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
         if (onSuccess) {
-            onSuccess([data isEqualToString:@"true"]);
+            onSuccess([data isEqualToString:@""]);
         }
     } onFailure:onFailure];
     int32_t opt = isAllowed ? 1 : 2;
@@ -134,7 +134,7 @@
                     onFailure:(nullable OIMFailureCallback)onFailure {
     CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
         if (onSuccess) {
-            onSuccess([data isEqualToString:@"true"]);
+            onSuccess([data isEqualToString:@""]);
         }
     } onFailure:onFailure];
     int32_t opt = isAllowed ? 1 : 2;
@@ -146,7 +146,7 @@
                       onFailure:(nullable OIMFailureCallback)onFailure {
     CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
         if (onSuccess) {
-            onSuccess([data isEqualToString:@"true"]);
+            onSuccess([data isEqualToString:@""]);
         }
     } onFailure:onFailure];
     int32_t opt = isAllowed ? 1 : 2;
@@ -158,7 +158,7 @@
                      onFailure:(nullable OIMFailureCallback)onFailure {
     CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
         if (onSuccess) {
-            onSuccess([data isEqualToString:@"true"]);
+            onSuccess([data isEqualToString:@""]);
         }
     } onFailure:onFailure];
     int32_t opt = isAllowed ? 1 : 2;
