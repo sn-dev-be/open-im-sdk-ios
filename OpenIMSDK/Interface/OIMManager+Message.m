@@ -62,8 +62,8 @@
     return [self convertToMessageInfo:json];
 }
 
-+ (OIMMessageInfo *)createImageMessageFromFullPath:(NSString *)imagePath encodePlaceholderImage:(NSString *)encodePlaceholderImage {
-    NSString *json = Open_im_sdkCreateImageMessageFromFullPath([OIMManager.manager operationId], imagePath, encodePlaceholderImage);
++ (OIMMessageInfo *)createImageMessageFromFullPath:(NSString *)imagePath placeholderSnapshot:(NSString *)placeholderSnapshot {
+    NSString *json = Open_im_sdkCreateImageMessageFromFullPath([OIMManager.manager operationId], imagePath, placeholderSnapshot);
     
     return [self convertToMessageInfo:json];
 }
@@ -118,8 +118,8 @@
                                          videoType:(NSString *)videoType
                                           duration:(NSInteger)duration
                                       snapshotPath:(NSString *)snapshotPath
-                            encodePlaceholderImage:(NSString *)encodePlaceholderImage {
-    NSString *json = Open_im_sdkCreateVideoMessageFromFullPath([OIMManager.manager operationId], videoPath, videoType, duration, snapshotPath, encodePlaceholderImage);
+                               placeholderSnapshot:(NSString *)placeholderSnapshot {
+    NSString *json = Open_im_sdkCreateVideoMessageFromFullPath([OIMManager.manager operationId], videoPath, videoType, duration, snapshotPath, placeholderSnapshot);
     
     return [self convertToMessageInfo:json];
 }

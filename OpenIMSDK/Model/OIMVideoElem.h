@@ -61,6 +61,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, nullable, copy) NSString *encodePlaceholderImage;
 
+@property (nonatomic, nullable, copy) NSString *placeholderSnapshot;
+
+
+
 
 @end
 

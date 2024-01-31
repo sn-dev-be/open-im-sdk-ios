@@ -67,7 +67,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * @param imagePath Absolute path
  */
-+ (OIMMessageInfo *)createImageMessageFromFullPath:(NSString *)imagePath encodePlaceholderImage:(NSString *)encodePlaceholderImage;
++ (OIMMessageInfo *)createImageMessageFromFullPath:(NSString *)imagePath placeholderSnapshot:(NSString *)placeholderSnapshot;
 
 /*
  * Create an audio message. For example: upload your own audio file and then use the returned URL to send the message.
@@ -129,7 +129,7 @@ NS_ASSUME_NONNULL_BEGIN
                                          videoType:(NSString *)videoType
                                           duration:(NSInteger)duration
                                       snapshotPath:(NSString *)snapshotPath
-                            encodePlaceholderImage:(NSString *)encodePlaceholderImage;
+                               placeholderSnapshot:(NSString *)placeholderSnapshot;
 
 /*
  * Create a video message. For example: upload your own video file and then use the returned URL to send the message.
