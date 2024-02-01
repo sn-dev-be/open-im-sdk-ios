@@ -108,23 +108,14 @@
 - (void)isBeBlock:(NSString *)userID
         onSuccess:(nullable OIMSuccessCallback)onSuccess
         onFailure:(nullable OIMFailureCallback)onFailure {
-    CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
-        if (onSuccess) {
-            onSuccess(data);
-        }
-    } onFailure:onFailure];
-    
+    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onFailure];
     Open_im_sdkIsBeBlock(callback, [self operationId], userID);
 }
 
 - (void)setUserAllowBeep:(BOOL)isAllowed
                onSuccess:(nullable OIMSuccessCallback)onSuccess
                onFailure:(nullable OIMFailureCallback)onFailure {
-    CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
-        if (onSuccess) {
-            onSuccess(data);
-        }
-    } onFailure:onFailure];
+    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onFailure];
     int32_t opt = isAllowed ? 1 : 2;
     Open_im_sdkSetUserAllowBeep(callback, [self operationId], opt);
 }
@@ -132,11 +123,7 @@
 - (void)setUserAllowVibration:(BOOL)isAllowed
                     onSuccess:(nullable OIMSuccessCallback)onSuccess
                     onFailure:(nullable OIMFailureCallback)onFailure {
-    CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
-        if (onSuccess) {
-            onSuccess(data);
-        }
-    } onFailure:onFailure];
+    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onFailure];
     int32_t opt = isAllowed ? 1 : 2;
     Open_im_sdkSetUserAllowVibration(callback, [self operationId], opt);
 }
@@ -144,11 +131,7 @@
 - (void)setUserAllowPushContent:(BOOL)isAllowed
                       onSuccess:(nullable OIMSuccessCallback)onSuccess
                       onFailure:(nullable OIMFailureCallback)onFailure {
-    CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
-        if (onSuccess) {
-            onSuccess(data);
-        }
-    } onFailure:onFailure];
+    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onFailure];
     int32_t opt = isAllowed ? 1 : 2;
     Open_im_sdkSetUserAllowPushContent(callback, [self operationId], opt);
 }
@@ -156,13 +139,26 @@
 - (void)setUserAllowOnlinePush:(BOOL)isAllowed
                      onSuccess:(nullable OIMSuccessCallback)onSuccess
                      onFailure:(nullable OIMFailureCallback)onFailure {
-    CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
-        if (onSuccess) {
-            onSuccess(data);
-        }
-    } onFailure:onFailure];
+    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onFailure];
     int32_t opt = isAllowed ? 1 : 2;
     Open_im_sdkSetUserAllowOnlinePush(callback, [self operationId], opt);
+}
+
+- (void)setUserAllowStrangerMsg:(BOOL)isAllowed
+                      onSuccess:(nullable OIMSuccessCallback)onSuccess
+                      onFailure:(nullable OIMFailureCallback)onFailure {
+    
+    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onFailure];
+    int32_t opt = isAllowed ? 1 : 2;
+    Open_im_sdkSetUserAllowStrangerMsg(callback, [self operationId], opt);
+}
+
+- (void)allowedSendMsg:(NSString *)ids
+             onSuccess:(nullable OIMSuccessCallback)onSuccess
+             onFailure:(nullable OIMFailureCallback)onFailure {
+    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onFailure];
+    Open_im_sdkAllowedSendMsg(callback, [self operationId], ids);
+    
 }
 
 @end

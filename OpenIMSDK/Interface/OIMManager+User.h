@@ -94,6 +94,14 @@ NS_ASSUME_NONNULL_BEGIN
                      onSuccess:(nullable OIMSuccessCallback)onSuccess
                      onFailure:(nullable OIMFailureCallback)onFailure;
 
+- (void)setUserAllowStrangerMsg:(BOOL)isAllowed
+                      onSuccess:(nullable OIMSuccessCallback)onSuccess
+                      onFailure:(nullable OIMFailureCallback)onFailure;
+
+- (void)allowedSendMsg:(NSString *)ids
+             onSuccess:(nullable OIMSuccessCallback)onSuccess
+             onFailure:(nullable OIMFailureCallback)onFailure;
+
 @end
 
 NS_ASSUME_NONNULL_END

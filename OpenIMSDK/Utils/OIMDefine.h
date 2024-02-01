@@ -109,6 +109,7 @@ typedef NS_ENUM(NSInteger, OIMMessageContentType) {
     OIMMessageContentTypeCloseVoiceCallChatNotification    =     1609,           //关闭语音通话通知
     OIMMessageContentTypeMicrophoneStatusChangeNotification    =     1608,           //麦克风状态改变通知
     OIMMessageContentTypeSpeekStatusChangedNotification    =     1610,           //说话状态改变通知
+//    OIMMessageContentTypeCleanRegularlyNotification = 1653,                 // 定时清理开关通知
     OIMMessageContentTypeTransferSuccessNotification    =     2002,           //转账成功通知
     OIMMessageContentTypeTransferFailedNotification    =     2003,           //转账失败通知
     OIMMessageContentTypeRechargeSuccessNotification    =     2004,           //充值成功通知
@@ -121,9 +122,6 @@ typedef NS_ENUM(NSInteger, OIMMessageContentType) {
     OIMMessageContentTypeJoinedClubNotification     = 1803,                 // 加入部落通知
     OIMMessageContentTypeJoinedAcceptNotification   = 1805,                 // 加入部落接受通知
     OIMMessageContentTypeJoinedRefuseNotification   = 1806,                 // 加入部落拒绝通知
-        
-
-    
 };
 
 /*
