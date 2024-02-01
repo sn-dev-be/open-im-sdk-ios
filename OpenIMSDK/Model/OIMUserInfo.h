@@ -26,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger allowVibration;             // 新消息提醒震动 1-开启 2-关闭
 @property (nonatomic, assign) NSInteger allowPushContent;           // 新消息提醒聊天内容 1-开启 2-关闭
 @property (nonatomic, assign) NSInteger allowOnlinePush;            // 新消息应用内推送 1-开启 2-关闭
+@property (nonatomic, assign) NSInteger allowStrangerMsg;           // 阻挡陌生人消息  1-开启 2-关闭
+@property (nonatomic, nullable, copy) NSString *language;           // 语言
 
 @end
 
