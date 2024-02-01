@@ -98,7 +98,7 @@ NS_ASSUME_NONNULL_BEGIN
                       onSuccess:(nullable OIMSuccessCallback)onSuccess
                       onFailure:(nullable OIMFailureCallback)onFailure;
 
-- (void)allowedSendMsg:(NSString *)ids
+- (void)allowedSendMsg:(NSArray<NSString *> *)ids
              onSuccess:(nullable OIMSuccessCallback)onSuccess
              onFailure:(nullable OIMFailureCallback)onFailure;
 

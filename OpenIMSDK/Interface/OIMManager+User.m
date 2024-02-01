@@ -153,12 +153,11 @@
     Open_im_sdkSetUserAllowStrangerMsg(callback, [self operationId], opt);
 }
 
-- (void)allowedSendMsg:(NSString *)ids
+- (void)allowedSendMsg:(NSArray<NSString *> *)ids
              onSuccess:(nullable OIMSuccessCallback)onSuccess
              onFailure:(nullable OIMFailureCallback)onFailure {
     CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onFailure];
-    Open_im_sdkAllowedSendMsg(callback, [self operationId], ids);
-    
+    Open_im_sdkAllowedSendMsg(callback, [self operationId], ids.mj_JSONString);
 }
 
 @end
