@@ -11,15 +11,21 @@
 
 @implementation OIMManager (Call)
 
-- (NSString *)SignalingInvite:(NSString *)conversationID userIds:(NSString *)userIds channelID:(NSString *)channelID  {
+- (NSString *)SignalingInvite:(NSString *)conversationID userIds:(NSString *)userIds channelID:(NSString *)channelID onSuccess: (OIMSignalVoiceInfoCallback)onSuccess  {
     CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:^(NSString * _Nullable data) {
         
     } onFailure:^(NSInteger code, NSString * _Nullable msg) {
         
     }];
     
-    Open_im_sdkSignalingInvite(callback, [self operationId], conversationID, [userIds mj_JSONString]);
+    
+//    Open_im_sdkSignalingInvite(callback, [self operationId], conversationID, [userIds mj_JSONString]);
 }
+
+
+typedef void(^OIMSignalVoiceInfoCallback)(OIMSignalVoiceInfo *_Nullable signalVoiceInfo);
+typedef void(^OIMSignalVoiceMichoneCallback)(OIMSignalVoiceMicphoneStatusInfo *_Nullable signalVoiceMicphoneStatusInfo);
+typedef void(^OIMSignalVoiceSpeakCallback)(OIMSignalVoiceSpeakStatusInfo *_Nullable signalVoiceSpeakStatusInfo);
 
 
 

@@ -68,6 +68,10 @@ typedef void (^OIMReceiptCallback)(NSArray <OIMReceiptInfo *> * _Nullable msgRec
 typedef void (^OIMRevokedCallback)(OIMMessageRevokedInfo * _Nullable msgRovoked);
 typedef void (^OIMRedPacketCallback)(OIMMessageRedPacketInfo *_Nullable msgRedPacket);
 
+typedef void(^OIMSignalVoiceInfoCallback)(OIMSignalVoiceInfo *_Nullable signalVoiceInfo);
+typedef void(^OIMSignalVoiceMichoneCallback)(OIMSignalVoiceMicphoneStatusInfo *_Nullable signalVoiceMicphoneStatusInfo);
+typedef void(^OIMSignalVoiceSpeakCallback)(OIMSignalVoiceSpeakStatusInfo *_Nullable signalVoiceSpeakStatusInfo);
+
 
 typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMessageListInfo * _Nullable result);
 
