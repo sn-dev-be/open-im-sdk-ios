@@ -21,6 +21,7 @@
 #import "OIMSearchResultInfo.h"
 #import "OIMSimpleResultInfo.h"
 #import "OIMSimpleRequstInfo.h"
+#import "OIMSignalVoiceInfo.h"
 
 @import OpenIMCore;
 
@@ -304,6 +305,22 @@ typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMe
 @optional
 
 - (void)onRecvCustomBusinessMessage:(NSDictionary <NSString *, id>* _Nullable)businessMessage;
+
+@end
+
+@protocol OIMSignalingListener <NSObject>
+
+- (void)OnReceiveNewInvitation:()
+
+//OnReceiveNewInvitation    邀请信令
+//OnInviteeAccepted    邀请接受信令
+//OnInviteeRejected    邀请拒绝信令
+//OnJoined    加入房间信令
+//OnInvitationCancelled    邀请取消信令
+//OnHangUp    挂断信令
+//OnClosed    关闭信令
+//OnMicphoneStatusChanged    麦克风状态改变信令
+//OnSpeakStatusChanged    说话状态通知信令
 
 @end
 

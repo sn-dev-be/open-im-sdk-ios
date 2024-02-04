@@ -71,6 +71,7 @@
 		4D0EC9D62AED1BCE0061ADC4 /* CallbackProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0EC99D2AED1BCD0061ADC4 /* CallbackProxy.m */; };
 		4D54C4C02B6103EC0029F475 /* OIMManager+Call.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D54C4BF2B6103EC0029F475 /* OIMManager+Call.m */; };
 		4D54C4C12B6103EC0029F475 /* OIMManager+Call.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D54C4BF2B6103EC0029F475 /* OIMManager+Call.m */; };
+		4DE6A2622B6F2FDD00AA72BA /* OIMSignalVoiceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE6A2612B6F2FDD00AA72BA /* OIMSignalVoiceInfo.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -223,6 +224,8 @@
 		4D0EC9A02AED1BCD0061ADC4 /* CallbackProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallbackProxy.h; sourceTree = "<group>"; };
 		4D54C4BE2B6103EC0029F475 /* OIMManager+Call.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OIMManager+Call.h"; sourceTree = "<group>"; };
 		4D54C4BF2B6103EC0029F475 /* OIMManager+Call.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "OIMManager+Call.m"; sourceTree = "<group>"; };
+		4DE6A2602B6F2FDD00AA72BA /* OIMSignalVoiceInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OIMSignalVoiceInfo.h; sourceTree = "<group>"; };
+		4DE6A2612B6F2FDD00AA72BA /* OIMSignalVoiceInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OIMSignalVoiceInfo.m; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* OpenIMSDKiOS_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenIMSDKiOS_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -440,6 +443,8 @@
 				4D0EC9932AED1BCD0061ADC4 /* OIMVideoElem.m */,
 				4D0EC9832AED1BCD0061ADC4 /* RedPacketInfo.h */,
 				4D0EC9652AED1BCD0061ADC4 /* RedPacketInfo.m */,
+				4DE6A2602B6F2FDD00AA72BA /* OIMSignalVoiceInfo.h */,
+				4DE6A2612B6F2FDD00AA72BA /* OIMSignalVoiceInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -730,6 +735,7 @@
 				4D0EC9C02AED1BCD0061ADC4 /* OIMFullUserInfo.m in Sources */,
 				4D0EC9AD2AED1BCD0061ADC4 /* NSObject+MJKeyValue.m in Sources */,
 				4D0EC9C32AED1BCD0061ADC4 /* OIMAttachedInfoElem.m in Sources */,
+				4DE6A2622B6F2FDD00AA72BA /* OIMSignalVoiceInfo.m in Sources */,
 				4D0EC9BA2AED1BCD0061ADC4 /* OIMFaceElem.m in Sources */,
 				4D0EC9C92AED1BCD0061ADC4 /* OIMFileElem.m in Sources */,
 				4D0EC9A12AED1BCD0061ADC4 /* OIMGCDMulticastDelegate.m in Sources */,
