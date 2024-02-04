@@ -16,6 +16,7 @@
 @property (nonatomic, strong) OIMGCDMulticastDelegate <OIMConversationListener> *conversationListeners;
 @property (nonatomic, strong) OIMGCDMulticastDelegate <OIMAdvancedMsgListener> *advancedMsgListeners;
 @property (nonatomic, strong) OIMGCDMulticastDelegate <OIMCustomBusinessListener> *customBusinessListeners;
+@property (nonatomic, strong) OIMGCDMulticastDelegate <OIMSignalingListener> *signalingListeners; // 信号监听
 
 @end
 
@@ -96,6 +97,14 @@
     return _customBusinessListeners;
 }
 
+- (OIMGCDMulticastDelegate<OIMSignalingListener> *)signalingListeners {
+    if (!_signalingListeners) {
+        _signalingListeners = (OIMGCDMulticastDelegate <OIMSignalingListener> *)[[OIMGCDMulticastDelegate alloc] init];
+    }
+    
+    return _signalingListeners;
+}
+
 #pragma mark -
 #pragma mark - Add/Remove listener
 
@@ -153,6 +162,14 @@
 
 - (void)removeCustomBusinessListener:(id<OIMCustomBusinessListener>)listener {
     [self.customBusinessListeners removeDelegate:listener];
+}
+
+- (void)addSignalingListener:(id<OIMSignalingListener>)listener {
+    [self.signalingListeners addDelegate:self delegateQueue:dispatch_get_main_queue()];
+}
+
+- (void)removeSignalingListener:(id<OIMSignalingListener>)listener {
+    [self.signalingListeners removeDelegate:self];
 }
 
 #pragma mark -

@@ -310,17 +310,16 @@ typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMe
 
 @protocol OIMSignalingListener <NSObject>
 
-- (void)OnReceiveNewInvitation:()
-
-//OnReceiveNewInvitation    邀请信令
-//OnInviteeAccepted    邀请接受信令
-//OnInviteeRejected    邀请拒绝信令
-//OnJoined    加入房间信令
-//OnInvitationCancelled    邀请取消信令
-//OnHangUp    挂断信令
-//OnClosed    关闭信令
-//OnMicphoneStatusChanged    麦克风状态改变信令
-//OnSpeakStatusChanged    说话状态通知信令
+@optional
+- (void)OnReceiveNewInvitation:(OIMSignalVoiceInfo *)info; // 邀请信令
+- (void)OnInviteeAccepted:(OIMSignalVoiceInfo *)info; // 邀请接受信令
+- (void)OnInviteeRejected:(OIMSignalVoiceInfo *)info; // 邀请拒绝信令
+- (void)OnJoined:(OIMSignalVoiceInfo *)info; // 加入房间信令
+- (void)OnInvitationCancelled:(OIMSignalVoiceInfo *)info; // 邀请取消信令
+- (void)OnHangUp:(OIMSignalVoiceInfo *)info; // 挂断信令
+- (void)OnClosed:(OIMSignalVoiceInfo *)info; // 关闭信令
+- (void)OnMicphoneStatusChanged:(OIMSignalVoiceMicphoneStatusInfo *)info; // 麦克风状态改变信令
+- (void)OnSpeakStatusChanged:(OIMSignalVoiceSpeakStatusInfo *)info; // 说话状态通知信令
 
 @end
 
@@ -469,6 +468,9 @@ Open_im_sdk_callbackOnCustomBusinessListener
  */
 - (void)removeCustomBusinessListener:(id<OIMCustomBusinessListener>)listener NS_SWIFT_NAME(removeCustomBusinessListener(listener:));
 
+- (void)addSignalingListener:(id<OIMSignalingListener>)listener;
+
+- (void)removeSignalingListener:(id<OIMSignalingListener>)listener;
 
 
 @end

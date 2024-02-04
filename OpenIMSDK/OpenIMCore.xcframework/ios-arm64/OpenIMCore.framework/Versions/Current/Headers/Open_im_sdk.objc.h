@@ -427,7 +427,7 @@ FOUNDATION_EXPORT void Open_im_sdkSignalingClose(id<Open_im_sdk_callbackBase> _N
 
 FOUNDATION_EXPORT void Open_im_sdkSignalingHungUp(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable conversationID, NSString* _Nullable channelID);
 
-FOUNDATION_EXPORT void Open_im_sdkSignalingInvite(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable conversationID, NSString* _Nullable userIDList);
+FOUNDATION_EXPORT void Open_im_sdkSignalingInvite(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable conversationID, NSString* _Nullable userID, NSString* _Nullable channelID);
 
 FOUNDATION_EXPORT void Open_im_sdkSignalingJoin(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable conversationID, NSString* _Nullable channelID);
 
