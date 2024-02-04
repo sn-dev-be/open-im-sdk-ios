@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OIMManager (Call)
 
-- (NSString *)SignalingInvite:(NSString *)conversationID userID:(NSString *)userID channelID:(NSString *)channelID;
+- (void)SignalingInvite:(NSString *)conversationID uid:(NSString *) channelID:(NSString *)channelID;
 
 //func SignalingInvite(
 //    callback open_im_sdk_callback.Base,
