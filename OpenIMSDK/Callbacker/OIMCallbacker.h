@@ -21,7 +21,7 @@
 #import "OIMSearchResultInfo.h"
 #import "OIMSimpleResultInfo.h"
 #import "OIMSimpleRequstInfo.h"
-#import "OIMSignalVoiceInfo.h"
+
 
 @import OpenIMCore;
 

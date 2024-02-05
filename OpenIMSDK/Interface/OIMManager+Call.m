@@ -11,220 +11,94 @@
 
 @implementation OIMManager (Call)
 
-// 邀请通话
-- (void)SignalingInvite:(NSString *)conversationID uid:(NSString *)uid channelID:(NSString *)channelID onSuccess: (OIMSignalVoiceInfoCallback)onSuccess onfailure:(OIMFailureCallback)onfailure  {
-    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:^(NSString * _Nullable data) {
-        OIMSignalVoiceInfo *info = [OIMSignalVoiceInfo mj_objectWithKeyValues:data];
-        onSuccess(info);
-    } onFailure:onfailure];
+// 邀请通话 - 返回ChannelID
+- (void)SignalingInvite:(NSString *)conversationID
+                    uid:(NSString *)uid
+              channelID:(NSString *)channelID
+              onSuccess: (OIMSuccessCallback)onSuccess
+              onfailure:(OIMFailureCallback)onfailure {
     
+    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onfailure];
     Open_im_sdkSignalingInvite(callback, [self operationId], conversationID, uid, channelID);
 }
 
 // 拒绝邀请
-- (void)signalingReject:(NSString *)conversationID channelID:(NSString *)channelID onSuccess: (OIMSignalVoiceInfoCallback)onSuccess onfailure:(OIMFailureCallback)onfailure {
-    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:^(NSString * _Nullable data) {
-        OIMSignalVoiceInfo *info = [OIMSignalVoiceInfo mj_objectWithKeyValues:data];
-        onSuccess(info);
-    } onFailure:onfailure];
+- (void)signalingReject:(NSString *)conversationID 
+              channelID:(NSString *)channelID
+              onSuccess: (OIMSuccessCallback)onSuccess
+              onfailure:(OIMFailureCallback)onfailure {
+    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onfailure];
+    Open_im_sdkSignalingReject(callback, [self operationId], conversationID, channelID);
+    
+    
 }
 
 // 接受邀请
-- (void)signalingAccept:(NSString *)conversationID channelID:(NSString *)channelID onSuccess: (OIMSignalVoiceInfoCallback)onSuccess onfailure:(OIMFailureCallback)onfailure {
-    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:^(NSString * _Nullable data) {
-        OIMSignalVoiceInfo *info = [OIMSignalVoiceInfo mj_objectWithKeyValues:data];
-        onSuccess(info);
-    } onFailure:onfailure];
+- (void)signalingAccept:(NSString *)conversationID 
+              channelID:(NSString *)channelID
+              onSuccess: (OIMSuccessCallback)onSuccess
+              onfailure:(OIMFailureCallback)onfailure {
+    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onfailure];
+    Open_im_sdkSignalingAccept(callback, [self operationId], conversationID, channelID);
 }
 
 // 加入群语音房
-- (void)signalingJoin:(NSString *)conversationID channelID:(NSString *)channelID onSuccess: (OIMSignalVoiceInfoCallback)onSuccess onfailure:(OIMFailureCallback)onfailure {
-    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:^(NSString * _Nullable data) {
-        OIMSignalVoiceInfo *info = [OIMSignalVoiceInfo mj_objectWithKeyValues:data];
-        onSuccess(info);
-    } onFailure:onfailure];
+- (void)signalingJoin:(NSString *)conversationID 
+            channelID:(NSString *)channelID
+            onSuccess: (OIMSuccessCallback)onSuccess
+            onfailure:(OIMFailureCallback)onfailure {
+    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onfailure];
+    Open_im_sdkSignalingJoin(callback, [self operationId], conversationID, channelID);
 }
 
 // 取消邀请
-- (void)signalingCancel:(NSString *)conversationID channelID:(NSString *)channelID cancelUserID:(NSString *)cancelUserID onSuccess: (OIMSignalVoiceInfoCallback)onSuccess onfailure:(OIMFailureCallback)onfailure {
-    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:^(NSString * _Nullable data) {
-        OIMSignalVoiceInfo *info = [OIMSignalVoiceInfo mj_objectWithKeyValues:data];
-        onSuccess(info);
-    } onFailure:onfailure];
+- (void)signalingCancel:(NSString *)conversationID 
+              channelID:(NSString *)channelID
+           cancelUserID:(NSString *)cancelUserID
+              onSuccess: (OIMSuccessCallback)onSuccess
+              onfailure:(OIMFailureCallback)onfailure {
+    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onfailure];
+    Open_im_sdkSignalingCancel(callback, [self operationId], conversationID, channelID, cancelUserID);
 }
 
 // 挂断
-- (void)SignalingHungUp:(NSString *)conversationID channelID:(NSString *)channelID onSuccess: (OIMSignalVoiceInfoCallback)onSuccess onfailure:(OIMFailureCallback)onfailure {
-    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:^(NSString * _Nullable data) {
-        OIMSignalVoiceInfo *info = [OIMSignalVoiceInfo mj_objectWithKeyValues:data];
-        onSuccess(info);
-    } onFailure:onfailure];
+- (void)signalingHungUp:(NSString *)conversationID
+              channelID:(NSString *)channelID
+              onSuccess: (OIMSuccessCallback)onSuccess
+              onfailure:(OIMFailureCallback)onfailure {
+    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onfailure];
+    Open_im_sdkSignalingHungUp(callback, [self operationId], conversationID, channelID);
 }
 
 // 更新麦克风状态
-- (void)UpdateMichoneStatus:(NSString *)conversationID channelID:(NSString *)channelID onSuccess: (OIMSignalVoiceInfoCallback)onSuccess onfailure:(OIMFailureCallback)onfailure {
-    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:^(NSString * _Nullable data) {
-        OIMSignalVoiceInfo *info = [OIMSignalVoiceInfo mj_objectWithKeyValues:data];
-        onSuccess(info);
-    } onFailure:onfailure];
+- (void)updateMichoneStatus:(NSString *)conversationID
+                  channelID:(NSString *)channelID
+                     status:(NSInteger)status
+                  onSuccess: (OIMSuccessCallback)onSuccess
+                  onfailure:(OIMFailureCallback)onfailure {
+    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onfailure];
+    Open_im_sdkUpdateMichoneStatus(callback, [self operationId], conversationID, channelID, status);
 }
 
 // 更新说话状态
-- (void)UpdateSpeakStatus:(NSString *)conversationID channelID:(NSString *)channelID onSuccess: (OIMSignalVoiceInfoCallback)onSuccess onfailure:(OIMFailureCallback)onfailure {
-    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:^(NSString * _Nullable data) {
-        OIMSignalVoiceInfo *info = [OIMSignalVoiceInfo mj_objectWithKeyValues:data];
-        onSuccess(info);
-    } onFailure:onfailure];
+- (void)updateSpeakStatus:(NSString *)conversationID
+                channelID:(NSString *)channelID
+                onSuccess: (OIMSuccessCallback)onSuccess
+                onfailure:(OIMFailureCallback)onfailure {
+    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onfailure];
+    Open_im_sdkUpdateSpeakStatuse(callback, [self operationId], conversationID, channelID);
 }
 
-
-typedef void(^OIMSignalVoiceInfoCallback)(OIMSignalVoiceInfo *_Nullable signalVoiceInfo);
-typedef void(^OIMSignalVoiceMichoneCallback)(OIMSignalVoiceMicphoneStatusInfo *_Nullable signalVoiceMicphoneStatusInfo);
-typedef void(^OIMSignalVoiceSpeakCallback)(OIMSignalVoiceSpeakStatusInfo *_Nullable signalVoiceSpeakStatusInfo);
-
-
+// 获取声网Token - 返回Token
+- (void)getRtcToken:(NSString *)uid
+          channelID:(NSString *)channelID
+           roleType:(NSInteger)roleType
+          onSuccess: (OIMSuccessCallback)onSuccess
+          onfailure:(OIMFailureCallback)onfailure {
+    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onfailure];
+    Open_im_sdkGetRtcToken(callback, [self operationId], uid, channelID, (int32_t)roleType);
+}
 
 @end
 
-//@implementation OIMManager (Call)
-//
-//// 单聊或群聊
-//- (void)signalingInvite:(NSString *)conversationID
-//                    userIds:(NSString *)userIds
-//                     onSuccess:(nullable OIMBoolCallback)onSuccess
-//                     onFailure:(nullable OIMFailureCallback)onFailure {
-//    CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
-//        NSLog(@"单聊或群聊的回调，再确定回调内容");
-////        if (onSuccess) {
-////            onSuccess([data isEqualToString:@"true"]);
-////        }
-//    } onFailure:onFailure];
-//    
-//    Open_im_sdkSignalingInvite(callback, [self operationId], conversationID, userIds);
-//}
-//
-//// 拒绝邀请
-//- (void)signalingReject:(NSString *)conversationID
-//              channelID:(NSString *)channelID
-//              onSuccess:(nullable OIMBoolCallback)onSuccess
-//              onFailure:(nullable OIMFailureCallback)onFailure {
-//    CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
-//        NSLog(@"拒绝邀请的回调，再确定回调内容");
-////        if (onSuccess) {
-////            onSuccess([data isEqualToString:@"true"]);
-////        }
-//    } onFailure:onFailure];
-//    
-//    Open_im_sdkSignalingReject(callback, [self operationId], conversationID, channelID);
-//}
-//
-//// 接受邀请
-//- (void)signalingAccept:(NSString *)conversationID
-//              channelID:(NSString *)channelID
-//              onSuccess:(nullable OIMBoolCallback)onSuccess
-//              onFailure:(nullable OIMFailureCallback)onFailure {
-//    CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
-//        NSLog(@"接受邀请的回调，再确定回调内容");
-////        if (onSuccess) {
-////            onSuccess([data isEqualToString:@"true"]);
-////        }
-//    } onFailure:onFailure];
-//    
-//    Open_im_sdkSignalingAccept(callback, [self operationId], conversationID, channelID);
-//}
-//
-//// 加入群语音房
-//- (void)signalingJoin:(NSString *)conversationID
-//              channelID:(NSString *)channelID
-//              onSuccess:(nullable OIMBoolCallback)onSuccess
-//              onFailure:(nullable OIMFailureCallback)onFailure {
-//    CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
-//        NSLog(@"加入群语音房的回调，再确定回调内容");
-////        if (onSuccess) {
-////            onSuccess([data isEqualToString:@"true"]);
-////        }
-//    } onFailure:onFailure];
-//    
-//    Open_im_sdkSignalingJoin(callback, [self operationId], conversationID, channelID);
-//}
-//
-//// 取消邀请
-//- (void)SignalingCancel:(NSString *)conversationID
-//              channelID:(NSString *)channelID
-//           cancelUserID:(NSString *)cancelUserID
-//              onSuccess:(nullable OIMBoolCallback)onSuccess
-//              onFailure:(nullable OIMFailureCallback)onFailure {
-//    CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
-//        NSLog(@"取消邀请的回调，再确定回调内容");
-////        if (onSuccess) {
-////            onSuccess([data isEqualToString:@"true"]);
-////        }
-//    } onFailure:onFailure];
-//
-//    Open_im_sdkSignalingCancel(callback, [self operationId], conversationID, channelID, cancelUserID);
-//}
-//
-//// 挂断
-//- (void)signalingHungUp:(NSString *)conversationID
-//              channelID:(NSString *)channelID
-//              onSuccess:(nullable OIMBoolCallback)onSuccess
-//              onFailure:(nullable OIMFailureCallback)onFailure {
-//    CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
-//        NSLog(@"挂断的回调，再确定回调内容");
-////        if (onSuccess) {
-////            onSuccess([data isEqualToString:@"true"]);
-////        }
-//    } onFailure:onFailure];
-//    
-//    Open_im_sdkSignalingHungUp(callback, [self operationId], conversationID, channelID);
-//}
-//
-//// 关闭语音房间
-//- (void)SignalingClose:(NSString *)conversationID
-//              channelID:(NSString *)channelID
-//              onSuccess:(nullable OIMBoolCallback)onSuccess
-//              onFailure:(nullable OIMFailureCallback)onFailure {
-//    CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
-//        NSLog(@"关闭语音房间的回调，再确定回调内容");
-////        if (onSuccess) {
-////            onSuccess([data isEqualToString:@"true"]);
-////        }
-//    } onFailure:onFailure];
-//    
-//    Open_im_sdkSignalingClose(callback, [self operationId], conversationID, channelID);
-//}
-//
-//// 更新麦克风状态
-//- (void)updateMichoneStatus:(NSString *)conversationID
-//              channelID:(NSString *)channelID
-//                     status:(int)status
-//              onSuccess:(nullable OIMBoolCallback)onSuccess
-//              onFailure:(nullable OIMFailureCallback)onFailure {
-//    CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
-//        NSLog(@"更新麦克风状态的回调，再确定回调内容");
-////        if (onSuccess) {
-////            onSuccess([data isEqualToString:@"true"]);
-////        }
-//    } onFailure:onFailure];
-//    
-//    Open_im_sdkUpdateMichoneStatus(callback, [self operationId], conversationID, channelID, status);
-//}
-//
-//// 更新说话状态
-//- (void)updateSpeakStatus:(NSString *)conversationID
-//              channelID:(NSString *)channelID
-//              onSuccess:(nullable OIMBoolCallback)onSuccess
-//              onFailure:(nullable OIMFailureCallback)onFailure {
-//    CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:^(NSString * _Nullable data) {
-//        NSLog(@"更新说话状态的回调，再确定回调内容");
-////        if (onSuccess) {
-////            onSuccess([data isEqualToString:@"true"]);
-////        }
-//    } onFailure:onFailure];
-//    
-//    Open_im_sdkUpdateSpeakStatuse(callback, [self operationId], conversationID, channelID);
-//}
-//
-//
-//
-//@end
+
