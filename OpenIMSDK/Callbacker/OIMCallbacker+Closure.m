@@ -96,4 +96,24 @@
     self.onRecvCustomBusinessMessage = onRecvCustomBusinessMessage;
 }
 
+- (void)setSignalingListenerWithOnVoiceInvitation:(OIMSignalVoiceInvitationCallback)onVoiceInvitation
+                                  onVoiceAccepted:(OIMSignalVoiceAcceptedCallback)onVoiceAccepted
+                                  onVoiceRejected:(OIMSignalVoiceRejectedCallback)onVoiceRejected
+                                    onVoiceJoined:(OIMSignalVoiceJoinedCallback)onVoiceJoined
+                                 onVoiceCancelled:(OIMSignalVoiceCancelledCallback)onVoiceCancelled
+                                    onVoiceHangUp:(OIMSignalVoiceHangUpCallback)onVoiceHangUp
+                                    onVoiceClosed:(OIMSignalVoiceClosedCallback)onVoiceClosed
+                                  onVoiceMicphone:(OIMSignalVoiceMicphoneCallback)onVoiceMicphone
+                                     onVoiceSpeak:(OIMSignalVoiceSpeakCallback)onVoiceSpeak {
+    self.onVoiceInvitation  = onVoiceInvitation;
+    self.onVoiceAccepted    = onVoiceAccepted;
+    self.onVoiceRejected    = onVoiceRejected;
+    self.onVoiceJoined      = onVoiceJoined;
+    self.onVoiceCancelled   = onVoiceCancelled;
+    self.onVoiceHangUp      = onVoiceHangUp;
+    self.onVoiceClosed      = onVoiceClosed;
+    self.onVoiceMicphone    = onVoiceMicphone;
+    self.onVoiceSpeak       = onVoiceSpeak;
+}
+
 @end

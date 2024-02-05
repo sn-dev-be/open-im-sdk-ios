@@ -74,6 +74,30 @@ typedef void(^OIMSignalVoiceMichoneCallback)(OIMSignalVoiceMicphoneStatusInfo *_
 typedef void(^OIMSignalVoiceSpeakCallback)(OIMSignalVoiceSpeakStatusInfo *_Nullable signalVoiceSpeakStatusInfo);
 
 
+typedef void(^OIMSignalVoiceInvitationCallback)(OIMSignalVoiceInfo *)info;
+typedef void(^OIMSignalVoiceAcceptedCallback)(OIMSignalVoiceInfo *)info;
+typedef void(^OIMSignalVoiceRejectedCallback)(OIMSignalVoiceInfo *)info;
+typedef void(^OIMSignalVoiceJoinedCallback)(OIMSignalVoiceInfo *)info;
+typedef void(^OIMSignalVoiceCancelledCallback)(OIMSignalVoiceInfo *)info;
+typedef void(^OIMSignalVoiceHangUpCallback)(OIMSignalVoiceInfo *)info;
+typedef void(^OIMSignalVoiceClosedCallback)(OIMSignalVoiceInfo *)info;
+typedef void(^OIMSignalVoiceMicphoneCallback)(OIMSignalVoiceMicphoneStatusInfo *)info;
+typedef void(^OIMSignalVoiceSpeakCallback)(OIMSignalVoiceSpeakStatusInfo *)info;
+
+
+
+
+//- (void)onReceiveNewInvitation:(OIMSignalVoiceInfo *)info; // 邀请信令
+//- (void)onInviteeAccepted:(OIMSignalVoiceInfo *)info; // 邀请接受信令
+//- (void)onInviteeRejected:(OIMSignalVoiceInfo *)info; // 邀请拒绝信令
+//- (void)onJoined:(OIMSignalVoiceInfo *)info; // 加入房间信令
+//- (void)onInvitationCancelled:(OIMSignalVoiceInfo *)info; // 邀请取消信令
+//- (void)onHangUp:(OIMSignalVoiceInfo *)info; // 挂断信令
+//- (void)onClosed:(OIMSignalVoiceInfo *)info; // 关闭信令
+//- (void)onMicphoneStatusChanged:(OIMSignalVoiceMicphoneStatusInfo *)info; // 麦克风状态改变信令
+//- (void)onSpeakStatusChanged:(OIMSignalVoiceSpeakStatusInfo *)info; // 说话状态通知信令
+
+
 typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMessageListInfo * _Nullable result);
 
 /// IMSDK Core Callbacks
@@ -316,15 +340,15 @@ typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMe
 @protocol OIMSignalingListener <NSObject>
 
 @optional
-- (void)OnReceiveNewInvitation:(OIMSignalVoiceInfo *)info; // 邀请信令
-- (void)OnInviteeAccepted:(OIMSignalVoiceInfo *)info; // 邀请接受信令
-- (void)OnInviteeRejected:(OIMSignalVoiceInfo *)info; // 邀请拒绝信令
-- (void)OnJoined:(OIMSignalVoiceInfo *)info; // 加入房间信令
-- (void)OnInvitationCancelled:(OIMSignalVoiceInfo *)info; // 邀请取消信令
-- (void)OnHangUp:(OIMSignalVoiceInfo *)info; // 挂断信令
-- (void)OnClosed:(OIMSignalVoiceInfo *)info; // 关闭信令
-- (void)OnMicphoneStatusChanged:(OIMSignalVoiceMicphoneStatusInfo *)info; // 麦克风状态改变信令
-- (void)OnSpeakStatusChanged:(OIMSignalVoiceSpeakStatusInfo *)info; // 说话状态通知信令
+- (void)onReceiveNewInvitation:(OIMSignalVoiceInfo *)info; // 邀请信令
+- (void)onInviteeAccepted:(OIMSignalVoiceInfo *)info; // 邀请接受信令
+- (void)onInviteeRejected:(OIMSignalVoiceInfo *)info; // 邀请拒绝信令
+- (void)onJoined:(OIMSignalVoiceInfo *)info; // 加入房间信令
+- (void)onInvitationCancelled:(OIMSignalVoiceInfo *)info; // 邀请取消信令
+- (void)onHangUp:(OIMSignalVoiceInfo *)info; // 挂断信令
+- (void)onClosed:(OIMSignalVoiceInfo *)info; // 关闭信令
+- (void)onMicphoneStatusChanged:(OIMSignalVoiceMicphoneStatusInfo *)info; // 麦克风状态改变信令
+- (void)onSpeakStatusChanged:(OIMSignalVoiceSpeakStatusInfo *)info; // 说话状态通知信令
 
 @end
 
@@ -476,6 +500,29 @@ Open_im_sdk_callbackOnCustomBusinessListener
 - (void)addSignalingListener:(id<OIMSignalingListener>)listener;
 
 - (void)removeSignalingListener:(id<OIMSignalingListener>)listener;
+
+@property (nonatomic, nullable, copy) OIMSignalVoiceInvitationCallback onVoiceInvitation;   // 邀请通话
+@property (nonatomic, nullable, copy) OIMSignalVoiceAcceptedCallback onVoiceAccepted;       // 接受通话
+@property (nonatomic, nullable, copy) OIMSignalVoiceRejectedCallback onVoiceRejected;       // 拒绝通话
+@property (nonatomic, nullable, copy) OIMSignalVoiceJoinedCallback onVoiceJoined;           // 加入通话
+@property (nonatomic, nullable, copy) OIMSignalVoiceCancelledCallback onVoiceCancelled;     // 取消邀请
+@property (nonatomic, nullable, copy) OIMSignalVoiceHangUpCallback onVoiceHangUp;           // 挂断通话
+@property (nonatomic, nullable, copy) OIMSignalVoiceClosedCallback onVoiceClosed;           // 关闭语音房 - 未使用
+@property (nonatomic, nullable, copy) OIMSignalVoiceMicphoneCallback onVoiceMicphone;       // 更新麦克风状态
+@property (nonatomic, nullable, copy) OIMSignalVoiceSpeakCallback onVoiceSpeak;             // 更新说话状态
+
+
+//typedef void(^OIMSignalVoiceInvitationCallback)(OIMSignalVoiceInfo *)info;
+//typedef void(^OIMSignalVoiceAcceptedCallback)(OIMSignalVoiceInfo *)info;
+//typedef void(^OIMSignalVoiceRejectedCallback)(OIMSignalVoiceInfo *)info;
+//typedef void(^OIMSignalVoiceJoinedCallback)(OIMSignalVoiceInfo *)info;
+//typedef void(^OIMSignalVoiceCancelledCallback)(OIMSignalVoiceInfo *)info;
+//typedef void(^OIMSignalVoiceHangUpCallback)(OIMSignalVoiceInfo *)info;
+//typedef void(^OIMSignalVoiceClosedCallback)(OIMSignalVoiceInfo *)info;
+//typedef void(^OIMSignalVoiceMicphoneCallback)(OIMSignalVoiceMicphoneStatusInfo *)info;
+//typedef void(^OIMSignalVoiceSpeakCallback)(OIMSignalVoiceSpeakStatusInfo *)info;
+
+
 
 
 @end

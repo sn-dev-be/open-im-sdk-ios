@@ -89,6 +89,18 @@ NS_ASSUME_NONNULL_BEGIN
  * Custom messages
  */
 - (void)setRecvCustomBusinessMessageListener:(OIMObjectCallback)onRecvCustomBusinessMessage;
+
+
+- (void)setSignalingListenerWithOnVoiceInvitation:(OIMSignalVoiceInvitationCallback)onVoiceInvitation
+                                  onVoiceAccepted:(OIMSignalVoiceAcceptedCallback)onVoiceAccepted
+                                  onVoiceRejected:(OIMSignalVoiceRejectedCallback)onVoiceRejected
+                                    onVoiceJoined:(OIMSignalVoiceJoinedCallback)onVoiceJoined
+                                 onVoiceCancelled:(OIMSignalVoiceCancelledCallback)onVoiceCancelled
+                                    onVoiceHangUp:(OIMSignalVoiceHangUpCallback)onVoiceHangUp
+                                    onVoiceClosed:(OIMSignalVoiceClosedCallback)onVoiceClosed
+                                  onVoiceMicphone:(OIMSignalVoiceMicphoneCallback)onVoiceMicphone
+                                     onVoiceSpeak:(OIMSignalVoiceSpeakCallback)onVoiceSpeak;
+
 @end
 
 NS_ASSUME_NONNULL_END

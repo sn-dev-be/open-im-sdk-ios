@@ -33,6 +33,7 @@
     Open_im_sdkSetConversationListener(self);
     Open_im_sdkSetAdvancedMsgListener(self);
     Open_im_sdkSetCustomBusinessListener(self);
+    Open_im_sdkSetSignalingListener(self);
 }
 
 - (void)dispatchMainThread:(void (NS_NOESCAPE ^)(void))todo {
@@ -685,5 +686,115 @@
         [self.customBusinessListeners onRecvCustomBusinessMessage:output];
     }];
 }
+
+#pragma mark -
+#pragma mark - OIMSignalingListener
+
+
+//OIMSignalVoiceInfo
+//OIMSignalVoiceMicphoneStatusInfo
+//OIMSignalVoiceSpeakStatusInfo
+
+// 邀请信令
+- (void)onReceiveNewInvitation:(NSString * _Nullable)voiceInfo {
+    OIMSignalVoiceInfo *info = [OIMSignalVoiceInfo mj_objectWithKeyValues:voiceInfo];
+    [self dispatchMainThread:^{
+        if (self.onVoiceInvitation) {
+            self.onVoiceInvitation(info);
+        }
+        [self.signalingListeners onReceiveNewInvitation:info];
+    }];
+}
+
+// 邀请接受信令
+- (void)onInviteeAccepted:(NSString * _Nullable)voiceInfo {
+    OIMSignalVoiceInfo *info = [OIMSignalVoiceInfo mj_objectWithKeyValues:voiceInfo];
+    [self dispatchMainThread:^{
+        if (self.onVoiceAccepted) {
+            self.onVoiceAccepted(info);
+        }
+        [self.signalingListeners onInviteeAccepted:info];
+    }];
+}
+
+// 邀请拒绝信令
+- (void)onInviteeRejected:(NSString * _Nullable)voiceInfo {
+    OIMSignalVoiceInfo *info = [OIMSignalVoiceInfo mj_objectWithKeyValues:voiceInfo];
+    [self dispatchMainThread:^{
+        if (self.onVoiceRejected) {
+            self.onVoiceRejected(info);
+        }
+        [self.signalingListeners onInviteeRejected:info];
+    }];
+}
+
+// 加入房间信令
+- (void)onJoined:(NSString * _Nullable)voiceInfo {
+    OIMSignalVoiceInfo *info = [OIMSignalVoiceInfo mj_objectWithKeyValues:voiceInfo];
+    [self dispatchMainThread:^{
+        if (self.onVoiceJoined) {
+            self.onVoiceJoined(info);
+        }
+        [self.signalingListeners onJoined:info];
+    }];
+}
+
+// 邀请取消信令
+- (void)onInvitationCancelled:(NSString * _Nullable)voiceInfo {
+    OIMSignalVoiceInfo *info = [OIMSignalVoiceInfo mj_objectWithKeyValues:voiceInfo];
+    [self dispatchMainThread:^{
+        if (self.onVoiceInvitation) {
+            self.onVoiceInvitation(info);
+        }
+        [self.signalingListeners onInvitationCancelled:info];
+    }];
+}
+
+// 挂断信令
+- (void)onHangUp:(NSString * _Nullable)voiceInfo {
+    OIMSignalVoiceInfo *info = [OIMSignalVoiceInfo mj_objectWithKeyValues:voiceInfo];
+    [self dispatchMainThread:^{
+        if (self.onVoiceHangUp) {
+            self.onVoiceHangUp(info);
+        }
+        [self.signalingListeners onHangUp:info];
+    }];
+}
+
+// 关闭信令
+- (void)onClosed:(NSString * _Nullable)voiceInfo {
+    OIMSignalVoiceInfo *info = [OIMSignalVoiceInfo mj_objectWithKeyValues:voiceInfo];
+    [self dispatchMainThread:^{
+        if (self.onVoiceClosed) {
+            self.onVoiceClosed(info);
+        }
+        [self.signalingListeners onClosed:info];
+    }];
+}
+
+// 麦克风状态改变信令
+- (void)onMicphoneStatusChanged:(NSString * _Nullable)micphoneInfo {
+    OIMSignalVoiceMicphoneStatusInfo *info = [OIMSignalVoiceMicphoneStatusInfo mj_objectWithKeyValues:micphoneInfo];
+    [self dispatchMainThread:^{
+        if (self.onVoiceMicphone) {
+            self.onVoiceMicphone(info);
+        }
+        [self.signalingListeners onMicphoneStatusChanged:info];
+    }];
+}
+
+// 说话状态通知信令
+- (void)onSpeakStatusChanged:(NSString * _Nullable)speakInfo {
+    OIMSignalVoiceSpeakStatusInfo *info = [OIMSignalVoiceSpeakStatusInfo mj_objectWithKeyValues:speakInfo];
+    [self dispatchMainThread:^{
+        if (self.onVoiceSpeak) {
+            self.onVoiceSpeak(info);
+        }
+        [self.signalingListeners onSpeakStatusChanged:info];
+    }];
+}
+
+
+
 
 @end
