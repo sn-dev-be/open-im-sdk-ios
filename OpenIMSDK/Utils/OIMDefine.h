@@ -96,20 +96,21 @@ typedef NS_ENUM(NSInteger, OIMMessageContentType) {
     OIMMessageContentTypeRedPacketHasExpiredNotification    =     2402,           //红包已过期通知
     OIMMessageContentTypeRedPacketHasReceiveNotification    =     2403,           //用户领取了红包通知
     
-    OIMMessageContentTypeInviteVoiceCallNotification        = 1602, // 邀请语音通话通知
-    OIMMessageContentTypeAcceptVoiceCallNotification        = 1603, // 接受语音通话通知
-    OIMMessageContentTypeRejectVoiceCallNotification        = 1604, // 拒绝语音通话通知
-    OIMMessageContentTypeJoinVoiceCallNotification          = 1605, // 加入语音通话通知
-    OIMMessageContentTypeCancelVoiceCallNotification        = 1606, // 取消语音通话通知
-    OIMMessageContentTypeHangUpVoiceCallNotification        = 1607, // 挂掉语音通话通知
-    OIMMessageContentTypeMicrophoneStatusChangeNotification = 1608, // 麦克风状态改变通知
-    OIMMessageContentTypeCloseVoiceCallChatNotification     = 1609, // 关闭语音通话通知
-    OIMMessageContentTypeSpeekStatusChangedNotification     = 1610, // 说话状态改变通知
+    OIMMessageContentTypeVoiceCallInviteNotification        = 1602, // 邀请语音通话通知
+    OIMMessageContentTypeVoiceCallAcceptNotification        = 1603, // 接受语音通话通知
+    OIMMessageContentTypeVoiceCallRejectNotification        = 1604, // 拒绝语音通话通知
+    OIMMessageContentTypeVoiceCallJoinNotification          = 1605, // 加入语音通话通知
+    OIMMessageContentTypeVoiceCallCancelNotification        = 1606, // 取消语音通话通知
+    OIMMessageContentTypeVoiceCallHangUpNotification        = 1607, // 挂掉语音通话通知
+    OIMMessageContentTypeVoiceCallMicrophoneNotification    = 1608, // 麦克风状态改变通知
+    OIMMessageContentTypeVoiceCallCloseNotification         = 1609, // 关闭语音通话通知
+    OIMMessageContentTypeVoiceCallSpeekNotification         = 1610, // 说话状态改变通知
     OIMMessageContentTypeVoiceCallChatCardMessage           = 1611, // 群语音卡片消息
-    OIMMessageContentTypeVoiceCallChatMessage               = 1612, // 拒绝语音通话单聊消息
-    OIMMessageContentTypeGroupVoiceJoinMessage              = 1613, // 群语音加入消息
-    OIMMessageContentTypeCancelVoiceCallChatMessage         = 1614, // 取消语音通话单聊消息
-    OIMMessageContentTypeCloseVoiceCallChatMessage          = 1615, // 关闭语音通话单聊消息
+    OIMMessageContentTypeVoiceCallChatRejectMessage         = 1612, // 拒绝语音通话单聊消息
+    OIMMessageContentTypeVoiceCallGroupJoinChatMessage      = 1613, // 群语音加入消息
+    OIMMessageContentTypeVoiceCallCancelChatMessage         = 1614, // 取消语音通话单聊消息
+    OIMMessageContentTypeVoiceCallCloseChatMessage          = 1615, // 关闭语音通话单聊消息
+    OIMMessageContentTypeVoiceCallNoAnsweredNotification    = 1616, // 单聊 60 秒未应答通知
     
 //    OIMMessageContentTypeGroupAudioCardMessage    =     201,           //群语音卡片消息
     
