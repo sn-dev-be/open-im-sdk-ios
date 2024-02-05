@@ -74,15 +74,15 @@ typedef void(^OIMSignalVoiceMichoneCallback)(OIMSignalVoiceMicphoneStatusInfo *_
 typedef void(^OIMSignalVoiceSpeakCallback)(OIMSignalVoiceSpeakStatusInfo *_Nullable signalVoiceSpeakStatusInfo);
 
 
-typedef void(^OIMSignalVoiceInvitationCallback)(OIMSignalVoiceInfo *)info;
-typedef void(^OIMSignalVoiceAcceptedCallback)(OIMSignalVoiceInfo *)info;
-typedef void(^OIMSignalVoiceRejectedCallback)(OIMSignalVoiceInfo *)info;
-typedef void(^OIMSignalVoiceJoinedCallback)(OIMSignalVoiceInfo *)info;
-typedef void(^OIMSignalVoiceCancelledCallback)(OIMSignalVoiceInfo *)info;
-typedef void(^OIMSignalVoiceHangUpCallback)(OIMSignalVoiceInfo *)info;
-typedef void(^OIMSignalVoiceClosedCallback)(OIMSignalVoiceInfo *)info;
-typedef void(^OIMSignalVoiceMicphoneCallback)(OIMSignalVoiceMicphoneStatusInfo *)info;
-typedef void(^OIMSignalVoiceSpeakCallback)(OIMSignalVoiceSpeakStatusInfo *)info;
+typedef void(^OIMSignalVoiceInvitationCallback)(OIMSignalVoiceInfo *_Nullable voiceInfo);
+typedef void(^OIMSignalVoiceAcceptedCallback)(OIMSignalVoiceInfo *_Nullable voiceInfo);
+typedef void(^OIMSignalVoiceRejectedCallback)(OIMSignalVoiceInfo *_Nullable voiceInfo);
+typedef void(^OIMSignalVoiceJoinedCallback)(OIMSignalVoiceInfo *_Nullable voiceInfo);
+typedef void(^OIMSignalVoiceCancelledCallback)(OIMSignalVoiceInfo *_Nullable );
+typedef void(^OIMSignalVoiceHangUpCallback)(OIMSignalVoiceInfo *_Nullable voiceInfo);
+typedef void(^OIMSignalVoiceClosedCallback)(OIMSignalVoiceInfo *_Nullable voiceInfo);
+typedef void(^OIMSignalVoiceMicphoneCallback)(OIMSignalVoiceMicphoneStatusInfo *_Nullable micphoneInfo);
+typedef void(^OIMSignalVoiceSpeakCallback)(OIMSignalVoiceSpeakStatusInfo *_Nullable speakInfo);
 
 
 
