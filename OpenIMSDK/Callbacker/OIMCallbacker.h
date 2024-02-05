@@ -497,10 +497,6 @@ Open_im_sdk_callbackOnCustomBusinessListener
  */
 - (void)removeCustomBusinessListener:(id<OIMCustomBusinessListener>)listener NS_SWIFT_NAME(removeCustomBusinessListener(listener:));
 
-- (void)addSignalingListener:(id<OIMSignalingListener>)listener;
-
-- (void)removeSignalingListener:(id<OIMSignalingListener>)listener;
-
 @property (nonatomic, nullable, copy) OIMSignalVoiceInvitationCallback onVoiceInvitation;   // 邀请通话
 @property (nonatomic, nullable, copy) OIMSignalVoiceAcceptedCallback onVoiceAccepted;       // 接受通话
 @property (nonatomic, nullable, copy) OIMSignalVoiceRejectedCallback onVoiceRejected;       // 拒绝通话
@@ -511,6 +507,9 @@ Open_im_sdk_callbackOnCustomBusinessListener
 @property (nonatomic, nullable, copy) OIMSignalVoiceMicphoneCallback onVoiceMicphone;       // 更新麦克风状态
 @property (nonatomic, nullable, copy) OIMSignalVoiceSpeakCallback onVoiceSpeak;             // 更新说话状态
 
+- (void)addSignalingListener:(id<OIMSignalingListener>)listener NS_SWIFT_NAME(addSignalingListener(listener:));
+
+- (void)removeSignalingListener:(id<OIMSignalingListener>)listener NS_SWIFT_NAME(removeSignalingListener(listener:));
 
 //typedef void(^OIMSignalVoiceInvitationCallback)(OIMSignalVoiceInfo *)info;
 //typedef void(^OIMSignalVoiceAcceptedCallback)(OIMSignalVoiceInfo *)info;
