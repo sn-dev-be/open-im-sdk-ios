@@ -293,6 +293,26 @@ static NSString *OPENIMSDKTableViewCellIdentifier = @"OPENIMSDKTableViewCellIden
         } onRedPacketMessage:^(OIMMessageRedPacketInfo * _Nullable msgRedPacket) {
             
         }];
+    
+    [OIMManager.callbacker setSignalingListenerWithOnVoiceInvitation:^(OIMSignalVoiceInfo * _Nullable voiceInfo) {
+        
+    } onVoiceAccepted:^(OIMSignalVoiceInfo * _Nullable voiceInfo) {
+        
+    } onVoiceRejected:^(OIMSignalVoiceInfo * _Nullable voiceInfo) {
+        
+    } onVoiceJoined:^(OIMSignalVoiceInfo * _Nullable voiceInfo) {
+        
+    } onVoiceCancelled:^(OIMSignalVoiceInfo * _Nullable voiceInfo) {
+        
+    } onVoiceHangUp:^(OIMSignalVoiceInfo * _Nullable voiceInfo) {
+        
+    } onVoiceClosed:^(OIMSignalVoiceInfo * _Nullable voiceInfo) {
+        
+    } onVoiceMicphone:^(OIMSignalVoiceMicphoneStatusInfo * _Nullable micphoneInfo) {
+        
+    } onVoiceSpeak:^(OIMSignalVoiceSpeakStatusInfo * _Nullable speakInfo) {
+            
+    }];
 }
 
 - (void)initSDK {

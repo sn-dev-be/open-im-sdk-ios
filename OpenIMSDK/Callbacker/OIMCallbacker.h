@@ -360,7 +360,8 @@ Open_im_sdk_callbackOnConversationListener,
 Open_im_sdk_callbackOnFriendshipListener,
 Open_im_sdk_callbackOnGroupListener,
 Open_im_sdk_callbackOnUserListener,
-Open_im_sdk_callbackOnCustomBusinessListener
+Open_im_sdk_callbackOnCustomBusinessListener,
+Open_im_sdk_callbackOnSignalingListener
 >
 
 + (instancetype)callbacker;
