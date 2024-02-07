@@ -99,7 +99,7 @@
 }
 
 - (OIMGCDMulticastDelegate<OIMSignalingListener> *)signalingListeners {
-    if (!_signalingListeners) {
+    if (_signalingListeners == nil) {
         _signalingListeners = (OIMGCDMulticastDelegate <OIMSignalingListener> *)[[OIMGCDMulticastDelegate alloc] init];
     }
     
@@ -166,11 +166,11 @@
 }
 
 - (void)addSignalingListener:(id<OIMSignalingListener>)listener {
-    [self.signalingListeners addDelegate:self delegateQueue:dispatch_get_main_queue()];
+    [self.signalingListeners addDelegate:listener delegateQueue:dispatch_get_main_queue()];
 }
 
 - (void)removeSignalingListener:(id<OIMSignalingListener>)listener {
-    [self.signalingListeners removeDelegate:self];
+    [self.signalingListeners removeDelegate:listener];
 }
 
 #pragma mark -
