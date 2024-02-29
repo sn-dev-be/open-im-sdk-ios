@@ -90,6 +90,8 @@ FOUNDATION_EXPORT void Open_im_sdkAcceptFriendApplication(id<Open_im_sdk_callbac
 
 FOUNDATION_EXPORT void Open_im_sdkAcceptGroupApplication(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable groupID, NSString* _Nullable fromUserID, NSString* _Nullable handleMsg);
 
+FOUNDATION_EXPORT void Open_im_sdkAcceptServerApplication(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable serverID, NSString* _Nullable fromUserID, NSString* _Nullable handleMsg, NSString* _Nullable conversationID);
+
 FOUNDATION_EXPORT void Open_im_sdkAddBlack(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable blackUserID);
 
 FOUNDATION_EXPORT void Open_im_sdkAddFriend(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable userIDReqMsg);
@@ -175,7 +177,11 @@ FOUNDATION_EXPORT void Open_im_sdkDeleteMessage(id<Open_im_sdk_callbackBase> _Nu
 
 FOUNDATION_EXPORT void Open_im_sdkDeleteMessageFromLocalStorage(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable conversationID, NSString* _Nullable clientMsgID);
 
+FOUNDATION_EXPORT void Open_im_sdkDeleteServerGroup(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable serverReqInfo);
+
 FOUNDATION_EXPORT void Open_im_sdkDismissGroup(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable groupID);
+
+FOUNDATION_EXPORT void Open_im_sdkDismissServer(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable serverReqInfo);
 
 FOUNDATION_EXPORT void Open_im_sdkFindMessageList(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable findMessageOptions);
 
@@ -317,6 +323,8 @@ FOUNDATION_EXPORT void Open_im_sdkRefuseFriendApplication(id<Open_im_sdk_callbac
 
 FOUNDATION_EXPORT void Open_im_sdkRefuseGroupApplication(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable groupID, NSString* _Nullable fromUserID, NSString* _Nullable handleMsg);
 
+FOUNDATION_EXPORT void Open_im_sdkRefuseServerApplication(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable serverID, NSString* _Nullable fromUserID, NSString* _Nullable handleMsg, NSString* _Nullable conversationID);
+
 FOUNDATION_EXPORT void Open_im_sdkRemoveBlack(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable removeUserID);
 
 FOUNDATION_EXPORT void Open_im_sdkResetConversationGroupAtType(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable conversationID);
@@ -425,7 +433,7 @@ FOUNDATION_EXPORT void Open_im_sdkSignalingCancel(id<Open_im_sdk_callbackBase> _
 
 FOUNDATION_EXPORT void Open_im_sdkSignalingClose(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable conversationID, NSString* _Nullable channelID);
 
-FOUNDATION_EXPORT void Open_im_sdkSignalingHungUp(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable conversationID, NSString* _Nullable channelID);
+FOUNDATION_EXPORT void Open_im_sdkSignalingHungUp(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable conversationID, NSString* _Nullable channelID, int32_t hungUpType);
 
 FOUNDATION_EXPORT void Open_im_sdkSignalingInvite(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable conversationID, NSString* _Nullable userID, NSString* _Nullable channelID);
 
@@ -453,7 +461,7 @@ FOUNDATION_EXPORT void Open_im_sdkUnsubscribeUsersStatus(id<Open_im_sdk_callback
 
 FOUNDATION_EXPORT void Open_im_sdkUpdateFcmToken(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable fcmToken, int64_t expireTime);
 
-FOUNDATION_EXPORT void Open_im_sdkUpdateMichoneStatus(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable conversationID, NSString* _Nullable channelID, long status);
+FOUNDATION_EXPORT void Open_im_sdkUpdateMichoneStatus(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable conversationID, NSString* _Nullable channelID, int32_t status);
 
 /**
  * UpdateMsgSenderInfo updates the message sender's nickname and face URL.

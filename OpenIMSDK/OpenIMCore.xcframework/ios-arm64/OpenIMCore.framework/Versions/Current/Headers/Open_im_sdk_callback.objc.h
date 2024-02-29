@@ -69,17 +69,19 @@
 @end
 
 @protocol Open_im_sdk_callbackOnClubListener <NSObject>
-- (void)onClubApplicationAccepted:(NSString* _Nullable)clubApplication;
-- (void)onClubApplicationAdded:(NSString* _Nullable)clubApplication;
-- (void)onClubApplicationDeleted:(NSString* _Nullable)clubApplication;
-- (void)onClubApplicationRejected:(NSString* _Nullable)clubApplication;
-- (void)onClubDismissed:(NSString* _Nullable)clubInfo;
-- (void)onClubInfoChanged:(NSString* _Nullable)clubInfo;
-- (void)onClubMemberAdded:(NSString* _Nullable)clubMemberInfo;
-- (void)onClubMemberDeleted:(NSString* _Nullable)clubMemberInfo;
-- (void)onClubMemberInfoChanged:(NSString* _Nullable)clubMemberInfo;
-- (void)onJoinedClubAdded:(NSString* _Nullable)clubInfo;
-- (void)onJoinedClubDeleted:(NSString* _Nullable)clubInfo;
+- (void)onJoinedServerAdded:(NSString* _Nullable)serverInfo;
+- (void)onJoinedServerDeleted:(NSString* _Nullable)serverInfo;
+- (void)onServerApplicationAccepted:(NSString* _Nullable)serverApplication;
+- (void)onServerApplicationAdded:(NSString* _Nullable)serverApplication;
+- (void)onServerApplicationDeleted:(NSString* _Nullable)serverApplication;
+- (void)onServerApplicationRejected:(NSString* _Nullable)serverApplication;
+- (void)onServerDismissed:(NSString* _Nullable)serverID;
+- (void)onServerGroupDismissed:(NSString* _Nullable)groupInfo;
+- (void)onServerInfoChanged:(NSString* _Nullable)serverInfo;
+- (void)onServerMemberAdded:(NSString* _Nullable)serverMemberInfo;
+- (void)onServerMemberDeleted:(NSString* _Nullable)serverMemberInfo;
+- (void)onServerMemberInfoChanged:(NSString* _Nullable)serverMemberInfo;
+- (void)onServerMemberKicked:(NSString* _Nullable)serverID;
 @end
 
 @protocol Open_im_sdk_callbackOnConnListener <NSObject>
@@ -293,17 +295,19 @@ FOUNDATION_EXPORT id<Open_im_sdk_callbackOnFriendshipListenerSdk> _Nullable Open
 @property(strong, readonly) _Nonnull id _ref;
 
 - (nonnull instancetype)initWithRef:(_Nonnull id)ref;
-- (void)onClubApplicationAccepted:(NSString* _Nullable)clubApplication;
-- (void)onClubApplicationAdded:(NSString* _Nullable)clubApplication;
-- (void)onClubApplicationDeleted:(NSString* _Nullable)clubApplication;
-- (void)onClubApplicationRejected:(NSString* _Nullable)clubApplication;
-- (void)onClubDismissed:(NSString* _Nullable)clubInfo;
-- (void)onClubInfoChanged:(NSString* _Nullable)clubInfo;
-- (void)onClubMemberAdded:(NSString* _Nullable)clubMemberInfo;
-- (void)onClubMemberDeleted:(NSString* _Nullable)clubMemberInfo;
-- (void)onClubMemberInfoChanged:(NSString* _Nullable)clubMemberInfo;
-- (void)onJoinedClubAdded:(NSString* _Nullable)clubInfo;
-- (void)onJoinedClubDeleted:(NSString* _Nullable)clubInfo;
+- (void)onJoinedServerAdded:(NSString* _Nullable)serverInfo;
+- (void)onJoinedServerDeleted:(NSString* _Nullable)serverInfo;
+- (void)onServerApplicationAccepted:(NSString* _Nullable)serverApplication;
+- (void)onServerApplicationAdded:(NSString* _Nullable)serverApplication;
+- (void)onServerApplicationDeleted:(NSString* _Nullable)serverApplication;
+- (void)onServerApplicationRejected:(NSString* _Nullable)serverApplication;
+- (void)onServerDismissed:(NSString* _Nullable)serverID;
+- (void)onServerGroupDismissed:(NSString* _Nullable)groupInfo;
+- (void)onServerInfoChanged:(NSString* _Nullable)serverInfo;
+- (void)onServerMemberAdded:(NSString* _Nullable)serverMemberInfo;
+- (void)onServerMemberDeleted:(NSString* _Nullable)serverMemberInfo;
+- (void)onServerMemberInfoChanged:(NSString* _Nullable)serverMemberInfo;
+- (void)onServerMemberKicked:(NSString* _Nullable)serverID;
 @end
 
 @interface Open_im_sdk_callbackOnConnListener : NSObject <goSeqRefInterface, Open_im_sdk_callbackOnConnListener> {
