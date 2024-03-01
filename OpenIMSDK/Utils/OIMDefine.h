@@ -185,6 +185,7 @@ typedef NS_ENUM(NSInteger, OIMGroupMemberRole) {
     OIMGroupMemberRoleMember = 20,  /// Group member
 };
 
+// 申请处理状态 - -1:已拒绝; 0:等待处理; 1:已同意
 typedef NS_ENUM(NSInteger, OIMApplicationStatus) {
     OIMApplicationStatusDecline = -1,  /// Declined
     OIMApplicationStatusNormal = 0,    /// Waiting for processing
@@ -233,8 +234,9 @@ typedef NS_ENUM(NSInteger, OIMGroupStatus) {
 };
 
 /**
- * Joining Group Methods
+ * Joining Group Methods  - 进群方式选项 - 2:通过邀请进群; 3:通过搜索进群; 4:通过二维码扫描进群
  */
+
 typedef NS_ENUM(int32_t, OIMJoinType) {
     OIMJoinTypeInvited = 2, /// Joining by invitation
     OIMJoinTypeSearch = 3,  /// Joining by search

@@ -10,21 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-// 申请处理状态 - -1:已拒绝; 0:等待处理; 1:已同意
-typedef NS_ENUM(NSInteger, OIMApplicationStatus) {
-    OIMApplicationStatusDecline  = -1,
-    OIMApplicationStatusNormal   = 0,
-    OIMApplicationStatusAccept   = 1
-};
-
-//进群方式选项 - 2:通过邀请进群; 3:通过搜索进群; 4:通过二维码扫描进群
-typedef NS_ENUM(NSInteger, OIMJoinType) {
-    OIMJoinTypeInvited  = 2,
-    OIMJoinTypeSearch   = 3,
-    OIMJoinTypeQRCode   = 4
-};
-
-
 // 部落状态：0 正常，1 被封，2 解散，3 禁言
 
 // 该类未使用，使用时需放开注释内容
@@ -39,7 +24,7 @@ typedef NS_ENUM(NSInteger, OIMJoinType) {
 //@property (nonatomic, copy)   NSString *description; // 部落简介 - 该字段冲突
 @property (nonatomic, copy)   NSString *icon; // 部落头像
 @property (nonatomic, assign) NSInteger createTime; // 申请进部落时间
-//@property (nonatomic, assign) NSInteger status; // 部落状态 - 该字段未确定
+@property (nonatomic, assign) OIMGroupStatus status; // 部落状态 - 该字段未确定
 @property (nonatomic, copy)   NSString *creatorUserID; // 建部落者 ID
 @property (nonatomic, copy)   NSString *ownerUserID; // 部落主 ID
 @property (nonatomic, assign) NSInteger memberNum; // 部落成员数量

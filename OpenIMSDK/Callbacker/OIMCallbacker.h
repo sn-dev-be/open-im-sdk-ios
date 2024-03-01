@@ -93,8 +93,6 @@ typedef void(^OIMSignalVoiceSpeakCallback)(OIMSignalVoiceSpeakStatusInfo *_Nulla
 typedef void(^OIMClubDismissedCallback)(NSString *_Nullable clubID);
 typedef void(^OIMClubMemberKickedCallback)(NSString *_Nullable clubID);
 
-onServerMemberKicked
-
 typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMessageListInfo * _Nullable result);
 
 /// IMSDK Core Callbacks
