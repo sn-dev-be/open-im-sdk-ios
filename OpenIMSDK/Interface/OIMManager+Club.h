@@ -23,7 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 部落成员被踢出通知 serverID: 部落ID
 - (void)kickServerMember:(NSString *)serverID
-               OnSuccess:(OIMSuccessCallback)onSuccess
+                  reason:(NSString *)reason
+           kickedUserIDs:(NSArray *)kickedUserIDs
+               onSuccess:(OIMSuccessCallback)onSuccess
                onFailure:(OIMFailureCallback)onFailure;
 
 

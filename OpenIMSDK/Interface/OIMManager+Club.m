@@ -10,6 +10,8 @@
 
 @implementation OIMManager (Club)
 
+
+
 - (void)dismissServerGroup:(NSString *)groupID 
                  onSuccess:(OIMSuccessCallback)onSuccess
                  onFailure:(OIMFailureCallback)onFailure {
@@ -19,31 +21,23 @@
 }
 
 - (void)dismissServer:(NSString *)serverID
-           onSuccess:(OIMSuccessCallback)onSuccess
-           onFailure:(OIMFailureCallback)onFailure {
+            onSuccess:(OIMSuccessCallback)onSuccess
+            onFailure:(OIMFailureCallback)onFailure {
     CallbackProxy *callback = [[CallbackProxy alloc]initWithOnSuccess:onSuccess onFailure:onFailure];
     Open_im_sdkDismissServer(callback, [self operationId], serverID);
-    
 }
 
-- (void)KickServerMember:(NSString *)serverID
+- (void)kickServerMember:(NSString *)serverID
                   reason:(NSString *)reason
            kickedUserIDs:(NSArray *)kickedUserIDs
                onSuccess:(OIMSuccessCallback)onSuccess
                onFailure:(OIMFailureCallback)onFailure {
     CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onFailure];
-    Open_im_sdkKickGroupMember(callback, [self operationId], serverID, reason, kickedUserIDs.mj_JSONString);
+//    Open_im_sdkKickGroupMember(callback, [self operationId], serverID, reason, kickedUserIDs.mj_JSONString);
 }
 
 
-- (void)kickServerMember:(NSString *)serverID
-               OnSuccess:(OIMSuccessCallback)onSuccess
-                onFailure:(OIMFailureCallback)onFailure {
-    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onFailure];
-//    Open_im_sdkKickGroupMember(callback, [self operationId], <#NSString * _Nullable groupID#>, <#NSString * _Nullable reason#>, <#NSString * _Nullable userIDList#>)
-//    
-//    Open_im_sdkKickServerMember(callback, [self operationId], serverID);
-}
+
 
 
 
