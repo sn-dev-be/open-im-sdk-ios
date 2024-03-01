@@ -15,6 +15,7 @@
                  onFailure:(OIMFailureCallback)onFailure {
     CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onFailure];
     Open_im_sdkDismissGroup(callback, [self operationId], groupID);
+    
 }
 
 - (void)dismissServer:(NSString *)serverID
