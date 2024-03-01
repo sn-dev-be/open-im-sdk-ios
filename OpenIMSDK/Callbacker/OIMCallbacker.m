@@ -834,6 +834,17 @@
     }];
 }
 
+- (void)onServerGroupDismissed:(NSString *)groupInfo {
+    OIMGroupInfo *info = [OIMGroupInfo mj_objectWithKeyValues:groupInfo];
+    [self dispatchMainThread:^{
+        if (self.onClubGroupDismissed) {
+            self.onClubGroupDismissed(info);
+        }
+
+        [self.clubListeners onServerGroupDismissed:info];
+    }];
+}
+
 
 
 

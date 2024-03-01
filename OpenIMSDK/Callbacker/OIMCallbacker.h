@@ -92,6 +92,7 @@ typedef void(^OIMSignalVoiceSpeakCallback)(OIMSignalVoiceSpeakStatusInfo *_Nulla
 //typedef void(^OIMClubRejectedCallback)(OIMClubApplicationInfo *_Nullable clubInfo);
 typedef void(^OIMClubDismissedCallback)(NSString *_Nullable clubID);
 typedef void(^OIMClubMemberKickedCallback)(NSString *_Nullable clubID);
+typedef void(^OIMClubGroupDismissedCallback)(OIMGroupInfo *_Nullable groupInfo);
 
 typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMessageListInfo * _Nullable result);
 
@@ -388,10 +389,14 @@ typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMe
 //- (void)onClubApplicationRejected:(OIMClubApplicationInfo *)groupApplication;
 //// 入部落申请被拒绝时，申请发起者以及该部落的部落主、管理员会收到此回调。
 //- (void)onClubApplicationRejected:(OIMClubApplicationInfo *)groupApplication;
+
 // 部落被解散时，该部落所有成员会收到此回调。
 - (void)onServerDismissed:(NString)serverID;
 // 被剔除部落时，被踢出成员会收到此回调。
 - (void)onServerMemberKicked:(NString)serverID;
+// 部落房间被解散时，该部落所有成员会收到此回调。
+- (void)onServerGroupDismissed:(OIMGroupInfo *)groupInfo;
+
 
 @end
 
@@ -575,6 +580,7 @@ Open_im_sdk_callbackOnClubListener
 
 @property (nonatomic, nullable, copy) OIMClubDismissedCallback onClubDismissed;   // 部落解散通知
 @property (nonatomic, nullable, copy) OIMClubMemberKickedCallback onClubMemberKicked;   // 部落成员被踢出通知
+@property (nonatomic, nullable, copy) OIMClubGroupDismissedCallback onClubGroupDismissed;   // 部落成员被踢出通知
 
 - (void)addClubListener:(id<OIMClubListener>)listener NS_SWIFT_NAME(addClubListener(listener:));
 

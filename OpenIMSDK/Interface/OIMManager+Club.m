@@ -10,6 +10,13 @@
 
 @implementation OIMManager (Club)
 
+- (void)dismissServerGroup:(NSString *)groupID 
+                 onSuccess:(OIMSuccessCallback)onSuccess
+                 onFailure:(OIMFailureCallback)onFailure {
+    CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onFailure];
+    Open_im_sdkDismissGroup(callback, [self operationId], groupID);
+}
+
 - (void)dismissServer:(NSString *)serverID
            onSuccess:(OIMSuccessCallback)onSuccess
            onFailure:(OIMFailureCallback)onFailure {
@@ -18,9 +25,11 @@
     
 }
 
-- (void)onServerMemberKickedOnSuccess:(OIMSuccessCallback)onSuccess
-                            onFailure:(OIMFailureCallback)onFailure {
+- (void)kickServerMember:(NSString *)serverID
+               OnSuccess:(OIMSuccessCallback)onSuccess
+                onFailure:(OIMFailureCallback)onFailure {
     CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onFailure];
+    Open_im_sdkKickServerMember(callback, [self operationId], serverID);
 }
 
 

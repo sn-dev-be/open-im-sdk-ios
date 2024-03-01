@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OIMManager (Club)
 
+// 部落房间解散通知 serverID: 部落ID
 - (void)dismissServer:(NSString *)serverID
             onSuccess:(OIMSuccessCallback)onSuccess
             onFailure:(OIMFailureCallback)onFailure;
@@ -19,7 +20,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
-//
+
+// 部落成员被踢出通知 serverID: 部落ID
+- (void)kickServerMember:(NSString *)serverID
+               OnSuccess:(OIMSuccessCallback)onSuccess
+               onFailure:(OIMFailureCallback)onFailure;
 
 
 /// 同意部落申请
