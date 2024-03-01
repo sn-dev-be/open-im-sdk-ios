@@ -177,11 +177,12 @@ FOUNDATION_EXPORT void Open_im_sdkDeleteMessage(id<Open_im_sdk_callbackBase> _Nu
 
 FOUNDATION_EXPORT void Open_im_sdkDeleteMessageFromLocalStorage(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable conversationID, NSString* _Nullable clientMsgID);
 
-FOUNDATION_EXPORT void Open_im_sdkDeleteServerGroup(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable serverReqInfo);
+// skipped function DeleteServerGroup with unsupported parameter or return types
+
 
 FOUNDATION_EXPORT void Open_im_sdkDismissGroup(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable groupID);
 
-FOUNDATION_EXPORT void Open_im_sdkDismissServer(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable serverReqInfo);
+FOUNDATION_EXPORT void Open_im_sdkDismissServer(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable serverID);
 
 FOUNDATION_EXPORT void Open_im_sdkFindMessageList(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable findMessageOptions);
 
@@ -301,7 +302,8 @@ FOUNDATION_EXPORT void Open_im_sdkJoinServer(id<Open_im_sdk_callbackBase> _Nulla
 
 FOUNDATION_EXPORT void Open_im_sdkKickGroupMember(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable groupID, NSString* _Nullable reason, NSString* _Nullable userIDList);
 
-FOUNDATION_EXPORT void Open_im_sdkKickServerMember(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable kickServerMemberReq);
+// skipped function KickServerMember with unsupported parameter or return types
+
 
 FOUNDATION_EXPORT void Open_im_sdkLogin(id<Open_im_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable userID, NSString* _Nullable token);
 
