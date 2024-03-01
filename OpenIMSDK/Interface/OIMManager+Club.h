@@ -17,9 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
             onSuccess:(OIMSuccessCallback)onSuccess
             onFailure:(OIMFailureCallback)onFailure;
 
-
-
-
+// 解散部落房间 serverID: 部落ID groupIds: 房间ID数组
+- (void)dismissServerGroup:(NSString *)serverID
+                  groupIds:(NSArray *)groupIds
+                 onSuccess:(OIMSuccessCallback)onSuccess
+                 onFailure:(OIMFailureCallback)onFailure;
 
 // 部落成员被踢出通知 serverID: 部落ID
 - (void)kickServerMember:(NSString *)serverID
