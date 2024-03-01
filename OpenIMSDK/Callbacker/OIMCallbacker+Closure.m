@@ -116,4 +116,10 @@
     self.onVoiceSpeak       = onVoiceSpeak;
 }
 
+- (void)setClubListennerWithOnDismissed:(OIMClubDismissedCallback)onDismissed
+                         onMemberKicked:(OIMClubMemberKickedCallback)onMemberKicked {
+    self.onClubDismissed = onDismissed;
+    self.onClubMemberKicked = onMemberKicked;
+}
+
 @end

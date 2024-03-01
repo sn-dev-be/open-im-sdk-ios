@@ -21,7 +21,9 @@
 #import "OIMSearchResultInfo.h"
 #import "OIMSimpleResultInfo.h"
 #import "OIMSimpleRequstInfo.h"
+#import "OIMClubApplicationInfo.h"
 #import "OIMSignalVoiceInfo.h"
+
 
 
 @import OpenIMCore;
@@ -85,22 +87,18 @@ typedef void(^OIMSignalVoiceMicphoneCallback)(OIMSignalVoiceMicphoneStatusInfo *
 typedef void(^OIMSignalVoiceSpeakCallback)(OIMSignalVoiceSpeakStatusInfo *_Nullable speakInfo);
 
 
+//typedef void(^OIMClubAcceptedCallback)(OIMClubApplicationInfo *_Nullable clubInfo);
+//typedef void(^OIMClubAddedCallback)(OIMClubApplicationInfo *_Nullable clubInfo);
+//typedef void(^OIMClubRejectedCallback)(OIMClubApplicationInfo *_Nullable clubInfo);
+typedef void(^OIMClubDismissedCallback)(NSString *_Nullable clubID);
+typedef void(^OIMClubMemberKickedCallback)(NSString *_Nullable clubID);
 
-
-//- (void)onReceiveNewInvitation:(OIMSignalVoiceInfo *)info; // 邀请信令
-//- (void)onInviteeAccepted:(OIMSignalVoiceInfo *)info; // 邀请接受信令
-//- (void)onInviteeRejected:(OIMSignalVoiceInfo *)info; // 邀请拒绝信令
-//- (void)onJoined:(OIMSignalVoiceInfo *)info; // 加入房间信令
-//- (void)onInvitationCancelled:(OIMSignalVoiceInfo *)info; // 邀请取消信令
-//- (void)onHangUp:(OIMSignalVoiceInfo *)info; // 挂断信令
-//- (void)onClosed:(OIMSignalVoiceInfo *)info; // 关闭信令
-//- (void)onMicphoneStatusChanged:(OIMSignalVoiceMicphoneStatusInfo *)info; // 麦克风状态改变信令
-//- (void)onSpeakStatusChanged:(OIMSignalVoiceSpeakStatusInfo *)info; // 说话状态通知信令
-
+onServerMemberKicked
 
 typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMessageListInfo * _Nullable result);
 
 /// IMSDK Core Callbacks
+/// ConnectListener - SDK 连接状态监听器，当连接状态变化时回调。
 @protocol OIMSDKListener <NSObject>
 @optional
 /**
@@ -131,7 +129,7 @@ typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMe
 @end
 
 /// User Status Callbacks
-@protocol OIMUserListener <NSObject>
+@protocol OIMUserListener <NSObject> // UserListener
 @optional
 /**
  * User information has been updated.
@@ -146,6 +144,7 @@ typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMe
 @end
 
 /// Profile and Relationship Callbacks
+/// RelationshipListener - 好友及黑名单关系链监听器，当好友及黑名单信息改变时回调。
 @protocol OIMFriendshipListener <NSObject>
 @optional
 
@@ -196,7 +195,9 @@ typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMe
 
 @end
 
+
 /// IMSDK Group Event Callbacks
+/// GroupListener - 群组监听器，当群组及群成员信息改变时回调。
 @protocol OIMGroupListener <NSObject>
 @optional
 
@@ -257,7 +258,9 @@ typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMe
 
 @end
 
+
 /// Conversation Event Callbacks
+/// ConversationListener - 会话监听器，当会话变化及会话同步状态改变时回调。
 @protocol OIMConversationListener <NSObject>
 @optional
 
@@ -296,6 +299,7 @@ typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMe
 @end
 
 /// Advanced Message Listener
+/// AdvancedMsgListener - 消息监听器，当收到新消息、已读回执及撤回消息时回调
 @protocol OIMAdvancedMsgListener <NSObject>
 @optional
 
@@ -329,6 +333,13 @@ typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMe
 
 @end
 
+// BatchMsgListener - 批量消息监听器，当收到新消息时回调。设置后AdvancedMsgListener中的onRecvNewMessage和onRecvOfflineNewMessage回调不再触发。
+@protocol OIMBatchMsgListener <NSObject>
+
+
+
+@end
+
 /// Custom Business Callbacks for IM
 @protocol OIMCustomBusinessListener <NSObject>
 @optional
@@ -336,6 +347,8 @@ typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMe
 - (void)onRecvCustomBusinessMessage:(NSDictionary <NSString *, id>* _Nullable)businessMessage;
 
 @end
+
+// ------------- 新增监听 -------------
 
 @protocol OIMSignalingListener <NSObject>
 
@@ -352,6 +365,41 @@ typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMe
 
 @end
 
+// OIMClubListener - 群组监听器，当群组及群成员信息改变时回调。
+@protocol OIMClubListener <NSObject>
+
+
+//onServerMemberAdded:          有新成员加入部落
+//onServerMemberDeleted         有成员离开部落
+//onServerMemberInfoChanged     某成员信息发生变更
+//onJoinedServerAdded           部落成员变更
+//onJoinedServerDeleted         部落成员变更
+//onServerInfoChanged           部落信息变更
+//onServerApplicationAccepted   部落申请被接受通知
+//onServerApplicationAdded      新的部落申请通知
+//onServerApplicationDeleted    部落申请删除通知
+//onServerApplicationRejected   部落申请被拒绝通知
+//onServerDismissed             部落解散通知（可用）
+//onServerMemberKicked          部落成员被踢出通知（可用）
+
+//// 入部落申请被同意时，申请发起者以及该部落的部落主、管理员会收到此回调。
+//- (void)onClubApplicationAccepted:(OIMClubApplicationInfo *)groupApplication;
+//// 用户发起入部落申请后，如进部落需要审批， 则申请发起者以及该部落的部落主、管理员会收到此回调。
+//- (void)onClubApplicationAdded:(OIMClubApplicationInfo *)groupApplication;
+//// 入部落申请被拒绝时，申请发起者以及该部落的部落主、管理员会收到此回调。
+//- (void)onClubApplicationRejected:(OIMClubApplicationInfo *)groupApplication;
+//// 入部落申请被拒绝时，申请发起者以及该部落的部落主、管理员会收到此回调。
+//- (void)onClubApplicationRejected:(OIMClubApplicationInfo *)groupApplication;
+// 部落被解散时，该部落所有成员会收到此回调。
+- (void)onServerDismissed:(NString)serverID;
+// 被剔除部落时，被踢出成员会收到此回调。
+- (void)onServerMemberKicked:(NString)serverID;
+
+@end
+
+
+
+
 @interface OIMCallbacker : NSObject
 <
 Open_im_sdk_callbackOnConnListener,
@@ -361,7 +409,9 @@ Open_im_sdk_callbackOnFriendshipListener,
 Open_im_sdk_callbackOnGroupListener,
 Open_im_sdk_callbackOnUserListener,
 Open_im_sdk_callbackOnCustomBusinessListener,
-Open_im_sdk_callbackOnSignalingListener
+Open_im_sdk_callbackOnSignalingListener,
+Open_im_sdk_callbackOnClubListener
+//open_im_adk
 >
 
 + (instancetype)callbacker;
@@ -512,6 +562,8 @@ Open_im_sdk_callbackOnSignalingListener
 
 - (void)removeSignalingListener:(id<OIMSignalingListener>)listener NS_SWIFT_NAME(removeSignalingListener(listener:));
 
+
+
 //typedef void(^OIMSignalVoiceInvitationCallback)(OIMSignalVoiceInfo *)info;
 //typedef void(^OIMSignalVoiceAcceptedCallback)(OIMSignalVoiceInfo *)info;
 //typedef void(^OIMSignalVoiceRejectedCallback)(OIMSignalVoiceInfo *)info;
@@ -522,6 +574,13 @@ Open_im_sdk_callbackOnSignalingListener
 //typedef void(^OIMSignalVoiceMicphoneCallback)(OIMSignalVoiceMicphoneStatusInfo *)info;
 //typedef void(^OIMSignalVoiceSpeakCallback)(OIMSignalVoiceSpeakStatusInfo *)info;
 
+
+@property (nonatomic, nullable, copy) OIMClubDismissedCallback onClubDismissed;   // 部落解散通知
+@property (nonatomic, nullable, copy) OIMClubMemberKickedCallback onClubMemberKicked;   // 部落成员被踢出通知
+
+- (void)addClubListener:(id<OIMClubListener>)listener NS_SWIFT_NAME(addClubListener(listener:));
+
+- (void)removeClubListener:(id<OIMClubListener>)listener NS_SWIFT_NAME(removeClubListener(listener:));
 
 
 

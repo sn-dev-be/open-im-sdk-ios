@@ -38,6 +38,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)updateNetworkStatus:(BOOL)status;
 
+- (void)setUserLanguage:(NSString *)language;
+
 @end
 
 NS_ASSUME_NONNULL_END

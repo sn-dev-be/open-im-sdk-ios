@@ -17,6 +17,7 @@
 @property (nonatomic, strong) OIMGCDMulticastDelegate <OIMAdvancedMsgListener> *advancedMsgListeners;
 @property (nonatomic, strong) OIMGCDMulticastDelegate <OIMCustomBusinessListener> *customBusinessListeners;
 @property (nonatomic, strong) OIMGCDMulticastDelegate <OIMSignalingListener> *signalingListeners; // 信号监听
+@property (nonatomic, strong) OIMGCDMulticastDelegate <OIMClubListener> *clubListeners; // 部落监听
 
 @end
 
@@ -34,6 +35,7 @@
     Open_im_sdkSetAdvancedMsgListener(self);
     Open_im_sdkSetCustomBusinessListener(self);
     Open_im_sdkSetSignalingListener(self);
+    Open_im_sdkSetClubListener(self);
 }
 
 - (void)dispatchMainThread:(void (NS_NOESCAPE ^)(void))todo {
@@ -106,6 +108,14 @@
     return _signalingListeners;
 }
 
+- (OIMGCDMulticastDelegate<OIMClubListener> *)clubListeners {
+    if (_clubListeners == nil) {
+        _clubListeners = (OIMGCDMulticastDelegate <OIMClubListener> *)[[OIMGCDMulticastDelegate alloc] init];
+    }
+    
+    return _clubListeners;
+}
+
 #pragma mark -
 #pragma mark - Add/Remove listener
 
@@ -171,6 +181,14 @@
 
 - (void)removeSignalingListener:(id<OIMSignalingListener>)listener {
     [self.signalingListeners removeDelegate:listener];
+}
+
+- (void)addClubListener:(id<OIMClubListener>)listener {
+    [self.clubListeners addDelegate:listener delegateQueue:dispatch_get_main_queue()];
+}
+
+- (void)removeClubListener:(id<OIMClubListener>)listener {
+    [self.clubListeners removeDelegate:listener];
 }
 
 #pragma mark -
@@ -791,6 +809,28 @@
             self.onVoiceSpeak(info);
         }
         [self.signalingListeners onSpeakStatusChanged:info];
+    }];
+}
+
+
+#pragma mark - OIMClubListener
+
+// 部落解散通知
+- (void)onServerDismissed:(NSString *)serverID {
+    [self dispatchMainThread:^{
+        if (self.onClubDismissed) {
+            self.onClubDismissed(serverID);
+        }
+        [self.clubListeners onServerDismissed:serverID];
+    }];
+}
+// 部落成员被踢出通知
+- (void)onServerMemberKicked:(NSString *)serverID {
+    [self dispatchMainThread:^{
+        if (self.onClubMemberKicked) {
+            self.onClubMemberKicked(serverID);
+        }
+        [self.clubListeners onServerMemberKicked:serverID];
     }];
 }
 

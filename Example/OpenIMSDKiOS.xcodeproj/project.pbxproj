@@ -13,6 +13,8 @@
 		17CADD2827C7227F0069C80E /* voice_test.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 17CADD2627C7227F0069C80E /* voice_test.m4a */; };
 		17CADD2A27C738630069C80E /* video_test.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 17CADD2927C738630069C80E /* video_test.mp4 */; };
 		17CADD2C27C7781C0069C80E /* file_test.zip in Resources */ = {isa = PBXBuildFile; fileRef = 17CADD2B27C7781C0069C80E /* file_test.zip */; };
+		4D0BE02B2B90736900CB56B7 /* OIMClubApplicationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0BE02A2B90736900CB56B7 /* OIMClubApplicationInfo.m */; };
+		4D0BE02E2B907CD300CB56B7 /* OIMManager+Club.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0BE02D2B907CD300CB56B7 /* OIMManager+Club.m */; };
 		4D0EC9202AECFD4A0061ADC4 /* OpenIMCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D0EC91C2AECF88E0061ADC4 /* OpenIMCore.xcframework */; };
 		4D0EC9272AED1A4E0061ADC4 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D0EC9262AED1A4E0061ADC4 /* libresolv.tbd */; };
 		4D0EC9A12AED1BCD0061ADC4 /* OIMGCDMulticastDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0EC92C2AED1BCD0061ADC4 /* OIMGCDMulticastDelegate.m */; };
@@ -108,6 +110,10 @@
 		17CADD2927C738630069C80E /* video_test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_test.mp4; sourceTree = "<group>"; };
 		17CADD2B27C7781C0069C80E /* file_test.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = file_test.zip; sourceTree = "<group>"; };
 		453F34D8D2D31FBC4FE60C5A /* Pods-OpenIMSDKiOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenIMSDKiOS_Example.release.xcconfig"; path = "Target Support Files/Pods-OpenIMSDKiOS_Example/Pods-OpenIMSDKiOS_Example.release.xcconfig"; sourceTree = "<group>"; };
+		4D0BE0292B90736900CB56B7 /* OIMClubApplicationInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OIMClubApplicationInfo.h; sourceTree = "<group>"; };
+		4D0BE02A2B90736900CB56B7 /* OIMClubApplicationInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OIMClubApplicationInfo.m; sourceTree = "<group>"; };
+		4D0BE02C2B907CD300CB56B7 /* OIMManager+Club.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OIMManager+Club.h"; sourceTree = "<group>"; };
+		4D0BE02D2B907CD300CB56B7 /* OIMManager+Club.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "OIMManager+Club.m"; sourceTree = "<group>"; };
 		4D0EC91C2AECF88E0061ADC4 /* OpenIMCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OpenIMCore.xcframework; path = ../OpenIMSDK/OpenIMCore.xcframework; sourceTree = "<group>"; };
 		4D0EC91E2AECFAE10061ADC4 /* OpenIMCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OpenIMCore.xcframework; path = ../OpenIMSDK/Libs/OpenIMCore.xcframework; sourceTree = "<group>"; };
 		4D0EC9262AED1A4E0061ADC4 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
@@ -334,6 +340,8 @@
 				4D0EC9392AED1BCD0061ADC4 /* OIMManager+User.m */,
 				4D54C4BE2B6103EC0029F475 /* OIMManager+Call.h */,
 				4D54C4BF2B6103EC0029F475 /* OIMManager+Call.m */,
+				4D0BE02C2B907CD300CB56B7 /* OIMManager+Club.h */,
+				4D0BE02D2B907CD300CB56B7 /* OIMManager+Club.m */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -445,6 +453,8 @@
 				4D0EC9652AED1BCD0061ADC4 /* RedPacketInfo.m */,
 				4DE6A2602B6F2FDD00AA72BA /* OIMSignalVoiceInfo.h */,
 				4DE6A2612B6F2FDD00AA72BA /* OIMSignalVoiceInfo.m */,
+				4D0BE0292B90736900CB56B7 /* OIMClubApplicationInfo.h */,
+				4D0BE02A2B90736900CB56B7 /* OIMClubApplicationInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -726,6 +736,7 @@
 				4D0EC9AA2AED1BCD0061ADC4 /* OIMManager.m in Sources */,
 				4D0EC9BE2AED1BCD0061ADC4 /* OIMNotificationElem.m in Sources */,
 				4D0EC9D32AED1BCD0061ADC4 /* OIMMergeElem.m in Sources */,
+				4D0BE02B2B90736900CB56B7 /* OIMClubApplicationInfo.m in Sources */,
 				4D0EC9C82AED1BCD0061ADC4 /* OIMSimpleRequstInfo.m in Sources */,
 				4D0EC9D42AED1BCE0061ADC4 /* UploadFileCallbackProxy.m in Sources */,
 				4D0EC9A62AED1BCD0061ADC4 /* OIMManager+Message.m in Sources */,
@@ -744,6 +755,7 @@
 				4D0EC9C22AED1BCD0061ADC4 /* OIMTransferElem.m in Sources */,
 				4D0EC9C52AED1BCD0061ADC4 /* OIMFriendApplication.m in Sources */,
 				4D0EC9AC2AED1BCD0061ADC4 /* MJPropertyType.m in Sources */,
+				4D0BE02E2B907CD300CB56B7 /* OIMManager+Club.m in Sources */,
 				4D0EC9BC2AED1BCD0061ADC4 /* OIMMessageElem.m in Sources */,
 				4D0EC9C42AED1BCD0061ADC4 /* OIMConversationInfo.m in Sources */,
 				4D0EC9B92AED1BCD0061ADC4 /* RedPacketInfo.m in Sources */,

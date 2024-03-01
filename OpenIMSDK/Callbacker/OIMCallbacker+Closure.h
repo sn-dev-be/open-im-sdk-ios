@@ -101,6 +101,10 @@ NS_ASSUME_NONNULL_BEGIN
                                   onVoiceMicphone:(OIMSignalVoiceMicphoneCallback)onVoiceMicphone
                                      onVoiceSpeak:(OIMSignalVoiceSpeakCallback)onVoiceSpeak;
 
+- (void)setClubListennerWithOnDismissed:(OIMClubDismissedCallback)onDismissed
+                         onMemberKicked:(OIMClubMemberKickedCallback)onMemberKicked;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
