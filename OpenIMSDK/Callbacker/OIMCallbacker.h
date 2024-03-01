@@ -391,9 +391,9 @@ typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMe
 //- (void)onClubApplicationRejected:(OIMClubApplicationInfo *)groupApplication;
 
 // 部落解散通知 - 部落被解散时，该部落所有成员会收到此回调。
-- (void)onServerDismissed:(NString)serverID;
+- (void)onServerDismissed:(NString *)serverID;
 // 部落成员被踢出通知 - 被剔除部落时，被踢出成员会收到此回调。
-- (void)onServerMemberKicked:(NString)serverID;
+- (void)onServerMemberKicked:(NString *)serverID;
 // 部落房间解散通知 - 部落房间被解散时，该部落所有成员会收到此回调。
 - (void)onServerGroupDismissed:(OIMGroupInfo *)groupInfo;
 
