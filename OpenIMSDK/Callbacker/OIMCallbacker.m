@@ -834,6 +834,7 @@
     }];
 }
 
+// 部落房间解散通知
 - (void)onServerGroupDismissed:(NSString *)groupInfo {
     OIMGroupInfo *info = [OIMGroupInfo mj_objectWithKeyValues:groupInfo];
     [self dispatchMainThread:^{

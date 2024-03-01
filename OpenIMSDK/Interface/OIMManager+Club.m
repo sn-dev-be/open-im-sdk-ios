@@ -10,13 +10,12 @@
 
 @implementation OIMManager (Club)
 
-
-
-- (void)dismissServerGroup:(NSString *)groupID 
+- (void)dismissServerGroup:(NSString *)serverID
+                  groupIds:(NSArray *)groupIds
                  onSuccess:(OIMSuccessCallback)onSuccess
                  onFailure:(OIMFailureCallback)onFailure {
     CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onFailure];
-    Open_im_sdkDismissGroup(callback, [self operationId], groupID);
+    Open_im_sdkDeleteServerGroup(callback, [self operationId], serverID, groupIds.mj_JSONString);
     
 }
 
@@ -33,13 +32,8 @@
                onSuccess:(OIMSuccessCallback)onSuccess
                onFailure:(OIMFailureCallback)onFailure {
     CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onFailure];
-//    Open_im_sdkKickGroupMember(callback, [self operationId], serverID, reason, kickedUserIDs.mj_JSONString);
+    Open_im_sdkKickServerMember(callback, [self operationId], serverID, reason, kickedUserIDs.mj_JSONString);
 }
-
-
-
-
-
 
 - (void)acceptServerApplication:(NSString *)serverID
                      fromUserID:(NSString *)fromUserID
