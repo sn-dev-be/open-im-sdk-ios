@@ -134,11 +134,6 @@
     }
 }
 
-- (void)setUserLanguage:(NSString *)language
-              onSuccess:(OIMSuccessCallback)onSuccess
-              onFailure:(OIMFailureCallback)onFailure {
-    CallbackProxy * callback = [[CallbackProxy alloc]initWithOnSuccess:onSuccess onFailure:onFailure];
-    Open_im_sdkSetUserLanguage(callback, [self operationId], language);
-}
+
 
 @end

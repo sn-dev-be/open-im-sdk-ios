@@ -102,6 +102,10 @@ NS_ASSUME_NONNULL_BEGIN
              onSuccess:(nullable OIMSuccessCallback)onSuccess
              onFailure:(nullable OIMFailureCallback)onFailure;
 
+- (void)setUserLanguage:(NSString *)language
+              onSuccess:(OIMSuccessCallback)onSuccess
+              onFailure:(OIMFailureCallback)onFailure;
+
 @end
 
 NS_ASSUME_NONNULL_END
