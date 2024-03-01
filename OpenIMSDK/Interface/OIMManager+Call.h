@@ -44,9 +44,10 @@ NS_ASSUME_NONNULL_BEGIN
               onSuccess: (OIMSuccessCallback)onSuccess
               onfailure:(OIMFailureCallback)onfailure;
 
-// 挂断
+// 挂断 - 1为正常情况挂断，2为异常情况挂断
 - (void)signalingHungUp:(NSString *)conversationID
               channelID:(NSString *)channelID
+             hungUpType:(NSInteger)hungUpType
               onSuccess: (OIMSuccessCallback)onSuccess
               onfailure:(OIMFailureCallback)onfailure;
 

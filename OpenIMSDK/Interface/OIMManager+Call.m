@@ -64,10 +64,11 @@
 // 挂断
 - (void)signalingHungUp:(NSString *)conversationID
               channelID:(NSString *)channelID
+             hungUpType:(NSInteger)hungUpType
               onSuccess: (OIMSuccessCallback)onSuccess
               onfailure:(OIMFailureCallback)onfailure {
     CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onfailure];
-    Open_im_sdkSignalingHungUp(callback, [self operationId], conversationID, channelID);
+    Open_im_sdkSignalingHungUp(callback, [self operationId], conversationID, channelID, (int32_t)hungUpType);
 }
 
 // 更新麦克风状态
@@ -77,7 +78,7 @@
                   onSuccess: (OIMSuccessCallback)onSuccess
                   onfailure:(OIMFailureCallback)onfailure {
     CallbackProxy *callback = [[CallbackProxy alloc] initWithOnSuccess:onSuccess onFailure:onfailure];
-    Open_im_sdkUpdateMichoneStatus(callback, [self operationId], conversationID, channelID, status);
+    Open_im_sdkUpdateMichoneStatus(callback, [self operationId], conversationID, channelID, (int32_t)status);
 }
 
 // 更新说话状态
