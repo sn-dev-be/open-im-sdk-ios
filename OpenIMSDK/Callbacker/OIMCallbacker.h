@@ -390,11 +390,11 @@ typedef void (^OIMGetAdvancedHistoryMessageListCallback)(OIMGetAdvancedHistoryMe
 //// 入部落申请被拒绝时，申请发起者以及该部落的部落主、管理员会收到此回调。
 //- (void)onClubApplicationRejected:(OIMClubApplicationInfo *)groupApplication;
 
-// 部落被解散时，该部落所有成员会收到此回调。
+// 部落解散通知 - 部落被解散时，该部落所有成员会收到此回调。
 - (void)onServerDismissed:(NString)serverID;
-// 被剔除部落时，被踢出成员会收到此回调。
+// 部落成员被踢出通知 - 被剔除部落时，被踢出成员会收到此回调。
 - (void)onServerMemberKicked:(NString)serverID;
-// 部落房间被解散时，该部落所有成员会收到此回调。
+// 部落房间解散通知 - 部落房间被解散时，该部落所有成员会收到此回调。
 - (void)onServerGroupDismissed:(OIMGroupInfo *)groupInfo;
 
 
